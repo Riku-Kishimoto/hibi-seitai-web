@@ -1,0 +1,79 @@
+{
+    "apiVersion": 2,
+    "name": "price-block/price-block",
+    "title": "料金表（price-block）",
+    "category": "layout",
+    "icon": "welcome-write-blog",
+    "description": "フロントと同じレイアウトのまま編集できる料金表ブロック",
+    "supports": {
+        "html": false,
+        "anchor": true
+    },
+    "textdomain": "price-block",
+    "editorScript": "price-block-editor",
+    "editorStyle": "price-block-editor-style",
+    "style": "price-block-style",
+    "attributes": {
+        "sections": {
+            "type": "array",
+            "default": [
+                {
+                    "id": "sec-0",
+                    "title": "施術料金",
+                    "rows": [
+                        {
+                            "id": "r-0-0",
+                            "left": "3割負担",
+                            "right": "初回￥1,500～"
+                        },
+                        {
+                            "id": "r-0-1",
+                            "left": "",
+                            "right": "2回目から￥800～"
+                        },
+                        {
+                            "id": "r-0-2",
+                            "left": "1割負担",
+                            "right": "初回￥600～"
+                        },
+                        {
+                            "id": "r-0-3",
+                            "left": "",
+                            "right": "2回目から￥400～"
+                        }
+                    ]
+                },
+                {
+                    "id": "sec-1",
+                    "title": "自賠責保険",
+                    "rows": [
+                        {
+                            "id": "r-1-0",
+                            "left": "窓口負担",
+                            "right": "￥0"
+                        }
+                    ]
+                },
+                {
+                    "id": "sec-2",
+                    "title": "労災保険",
+                    "rows": [
+                        {
+                            "id": "r-2-0",
+                            "left": "窓口負担",
+                            "right": "￥0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "leadText": {
+            "type": "string",
+            "default": "だいせんじ接骨院は各種健康保険、労災、交通事故による自賠責適用となります"
+        },
+        "title": {
+            "type": "string",
+            "default": "料金表"
+        }
+    }
+}

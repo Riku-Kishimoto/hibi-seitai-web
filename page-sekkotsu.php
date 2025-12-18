@@ -21,7 +21,7 @@
                     </p>
                 </div>
         </section>
-        <section class="point">
+        <section class="point" id="point">
             <div class="point__inner">
                 <h3 class="point__title"><span>だいせんじ接骨院のポイント</span></h3>
                 <article class="point__article card">
@@ -60,7 +60,7 @@
                     </div>
                 </article>
 
-                <article class="point__article card">
+                <article class="point__article card" id="point3">
                     <div class="card__side card__side--meta">
                         <div class="card__num">03</div>
                         <h4 class="card__title">自律神経バランス調整</h4>

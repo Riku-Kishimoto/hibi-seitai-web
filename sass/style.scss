@@ -219,6 +219,16 @@ img {
     }
 }
 
+/* 最初は非表示にしておく（JSで制御するため） */
+.loading {
+    display: none;
+}
+
+/* 初回訪問時、JSでこのクラスを付けて表示させる */
+.loading.is-active {
+    display: grid;
+}
+
 
 
 
@@ -1249,7 +1259,7 @@ img {
         text-align: center;
         font-size: rem(14);
         font-weight: bold;
-        color: $color-main;
+        color: $color-accent;
         text-align: center;
 
         th,
@@ -1259,11 +1269,11 @@ img {
 
         th {
             font-weight: bold;
-            border-bottom: 1px solid $color-main;
+            border-bottom: 1px solid $color-accent;
         }
 
         tr+tr td {
-            border-top: 1px solid $color-main;
+            border-top: 1px solid $color-accent;
         }
 
         td {

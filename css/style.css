@@ -90,6 +90,16 @@ img {
     stroke-dashoffset: -240;
   }
 }
+/* 最初は非表示にしておく（JSで制御するため） */
+.loading {
+  display: none;
+}
+
+/* 初回訪問時、JSでこのクラスを付けて表示させる */
+.loading.is-active {
+  display: grid;
+}
+
 .hamburger {
   position: fixed;
   top: 1.25rem;
@@ -1037,7 +1047,7 @@ img {
   text-align: center;
   font-size: 0.875rem;
   font-weight: bold;
-  color: #FFD75F;
+  color: #001F3F;
   text-align: center;
 }
 .schedule__table th,
@@ -1046,10 +1056,10 @@ img {
 }
 .schedule__table th {
   font-weight: bold;
-  border-bottom: 1px solid #FFD75F;
+  border-bottom: 1px solid #001F3F;
 }
 .schedule__table tr + tr td {
-  border-top: 1px solid #FFD75F;
+  border-top: 1px solid #001F3F;
 }
 .schedule__table td::after {
   display: none;

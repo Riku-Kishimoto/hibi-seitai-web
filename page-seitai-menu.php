@@ -93,7 +93,7 @@
             </div>
         </section>
 
-        <section class="fee">
+        <section class="fee" id="fee">
             <div class="fee__inner">
                 <h3 class="fee__title"><span>料金表</span></h3>
                 <div class="fee__content">
@@ -153,7 +153,7 @@
             </div>
         </section>
 
-        <section class="flow">
+        <section class="flow" id="flow">
             <div class="flow__inner">
                 <h3 class="flow__title"><span>施術の流れ</span></h3>
                 <div class="flow__timeline">

@@ -128,7 +128,7 @@
                                 <li class="gnav__item--nonhov"><a href="<?php echo home_url('/sekkotsu-menu/'); ?>">接骨院&nbsp;メニュー・料金</a></li>
                             </ul>
                         </li>
-                        <li class="gnav__item"><a href="<?php echo home_url('/seitai-menu/'); ?> #worthy">交通事故治療</a></li>
+                        <li class="gnav__item"><a href="<?php echo home_url('/sekkotsu/#worthy'); ?>">交通事故治療</a></li>
                         <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #access">アクセス</a></li>
                         <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #calendar">営業案内</a></li>
                         <li class="gnav__item gnav__item--nonhov gnav__item--btn"><a class="btn" href="">LINEで予約</a>
@@ -161,7 +161,7 @@
                 </li>
                 <li class="nav-overlay__item"><a href="<?php echo home_url('/sekkotsu-menu/'); ?>" class="nav-overlay__link">接骨院&nbsp;メニュー・料金</a>
                 </li>
-                <li class="nav-overlay__item"><a href="<?php echo home_url('/seitai-menu/'); ?> #worthy"
+                <li class="nav-overlay__item"><a href="<?php echo home_url('/sekkotsu/#worthy'); ?>"
                         class="nav-overlay__link">交通事故治療</a>
                 </li>
                 <li class="nav-overlay__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #access" class="nav-overlay__link">アクセス</a>

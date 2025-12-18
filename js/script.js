@@ -137,12 +137,19 @@ setInterval(updateIndicator, 5000);
 updateIndicator();
 
 //ローディングアニメーション
-window.addEventListener('load', () => {
-    const loading = document.getElementById('loading');
-    console.log('loading:', loading);
 
-    setTimeout(() => {
-        console.log('add class');
-        loading.classList.add('is-hidden');
-    }, 1200);
-});
+
+const loading = document.getElementById('loading');
+
+if (!sessionStorage.getItem('visited')) {
+    loading.classList.add('is-active');
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loading.classList.add('is-hidden');
+            sessionStorage.setItem('visited', 'true');
+        }, 2000);
+    });
+} else {
+    loading.style.display = 'none';
+}

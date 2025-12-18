@@ -25,7 +25,7 @@
         </section>
         <section class="point">
             <div class="point__inner">
-                <h3 class="point__title"><span>日比整体のポイント</span></h3>
+                <h3 class="point__title" id="point"><span>日比整体のポイント</span></h3>
                 <article class="point__article card">
                     <div class="card__side card__side--meta">
                         <div class="card__num">01</div>
@@ -181,11 +181,13 @@
             </div>
 
             <div class="nextbtn">
-                <div class="nextbtn__inner">
-                    <div class="nextbtn__content">
-                        <p>料金表ページへ<span class="dli-arrow-right"></span></p>
+                <a href="<?php echo home_url('/seitai-menu/#fee'); ?>">
+                    <div class="nextbtn__inner">
+                        <div class="nextbtn__content">
+                            <p>料金表ページへ<span class="dli-arrow-right"></span></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -249,11 +251,13 @@
 
             </div>
             <div class="nextbtn">
-                <div class="nextbtn__inner">
-                    <div class="nextbtn__content">
-                        <p>施術の流れ<span class="dli-arrow-right"></span></p>
+                <a href="<?php echo home_url('/seitai-menu/#flow'); ?>">
+                    <div class="nextbtn__inner">
+                        <div class="nextbtn__content">
+                            <p>施術の流れ<span class="dli-arrow-right"></span></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 

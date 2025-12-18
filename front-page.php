@@ -56,12 +56,12 @@
                     </div>
                     <div class="clinic__link">
                         <ul class="clinic__tags">
-                            <li><a href="">土日祝も早朝営業</a></li>
-                            <li><a href="">独自の足圧施術</a></li>
+                            <li><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #calendar">土日祝も早朝営業</a></li>
+                            <li><a href="<?php echo home_url('/seitai/'); ?>#point">独自の足圧施術</a></li>
                             <li><a href="">予約状況配信中</a></li>
-                            <li><a href="">酸素カプセル</a></li>
+                            <li><a href="<?php echo home_url('/seitai/#worthy'); ?>">酸素カプセル</a></li>
                         </ul>
-                        <a href="" class="btn btn--clinic">日比整体個別ページへ<span class="dli-arrow-right"></span></a>
+                        <a href="<?php echo home_url('/seitai/'); ?>" class="btn btn--clinic">日比整体個別ページへ<span class="dli-arrow-right"></span></a>
                     </div>
                 </article>
 
@@ -81,12 +81,12 @@
                     </div>
                     <div class="clinic__link">
                         <ul class="clinic__tags">
-                            <li><a href="">女性の施術師</a></li>
-                            <li><a href="">交通事故治療</a></li>
-                            <li><a href="">保険治療</a></li>
-                            <li><a href="">自律神経調整施術</a></li>
+                            <li><a href="<?php echo home_url('/sekkotsu/#point'); ?>">女性の施術師</a></li>
+                            <li><a href="<?php echo home_url('/sekkotsu/#worthy'); ?>">交通事故治療</a></li>
+                            <li><a href="<?php echo home_url('/sekkotsu-menu/#fee'); ?>">保険治療</a></li>
+                            <li><a href="<?php echo home_url('/sekkotsu/#point3'); ?>">自律神経調整施術</a></li>
                         </ul>
-                        <a href="#" class="btn btn--clinic">だいせんじ接骨院個別ページへ<span class="dli-arrow-right"></span></a>
+                        <a href="<?php echo home_url('/sekkotsu/'); ?>" class="btn btn--clinic">だいせんじ接骨院個別ページへ<span class="dli-arrow-right"></span></a>
                     </div>
                 </article>
             </div>

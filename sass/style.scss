@@ -1684,7 +1684,7 @@ img {
     }
 
     &__items {
-        padding-left: rem(10);
+        padding-left: rem(30);
         display: grid;
         grid-template-columns: 66fr 272fr;
         column-gap: rem(60);
@@ -1853,6 +1853,10 @@ img {
 
     &__title {
         @include title('capsule');
+    }
+
+    &__title--sekkotsu {
+        @include title('treatment');
     }
 
     &__image {

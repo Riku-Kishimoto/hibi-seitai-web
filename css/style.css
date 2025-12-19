@@ -1496,7 +1496,7 @@ img {
   max-width: 33.75rem;
 }
 .information__items {
-  padding-left: 0.625rem;
+  padding-left: 1.875rem;
   display: grid;
   grid-template-columns: 66fr 272fr;
   -moz-column-gap: 3.75rem;
@@ -1812,6 +1812,41 @@ img {
 }
 @media (width >= 1024px) {
   .worthy__title {
+    font-size: 1.5rem;
+  }
+}
+.worthy__title--sekkotsu {
+  margin-top: 8.125rem;
+  margin-bottom: 3.125rem;
+  color: #FFD75F;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.worthy__title--sekkotsu::before {
+  content: "treatment";
+  display: block;
+  margin-bottom: 0.0625rem;
+  color: #001F3F;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  line-height: 1;
+  padding-bottom: 0.1875rem;
+}
+.worthy__title--sekkotsu span {
+  display: block;
+  position: relative;
+}
+.worthy__title--sekkotsu span::before {
+  content: "";
+  display: block;
+  width: 1.5625rem;
+  border-bottom: 1px dotted #001F3F;
+  margin: 0 auto 0;
+}
+@media (width >= 1024px) {
+  .worthy__title--sekkotsu {
     font-size: 1.5rem;
   }
 }

@@ -121,7 +121,7 @@
 
         <section class="worthy" id="worthy">
             <div class="worthy__inner">
-                <h3 class="worthy__title"><span>交通事故治療</span></h3>
+                <h3 class="worthy__title worthy__title--sekkotsu"><span>交通事故治療</span></h3>
 
                 <div class="worthy__items explanation">
                     <h4 class="explanation__title explanation__title--short">交通事故治療</h4>

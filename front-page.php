@@ -118,7 +118,7 @@
                         }
                     ?>
                     <li class="<?php echo $li_class; ?>">
-                        <span><?php echo get_the_date('Y.m.d'); ?></span>
+                        <a href="<?php the_permalink(); ?>"><span><?php echo get_the_date('Y.m.d'); ?></span></a>
 
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </li>
@@ -169,7 +169,7 @@
                                     <td>◯</td>
                                 </tr>
                                 <tr>
-                                    <td>03:00~06:30</td>
+                                    <td>15:00~18:30</td>
                                     <td>◯</td>
                                     <td>◯</td>
                                     <td>休</td>
@@ -184,7 +184,7 @@
                     <div class="calendar__list explanation explanation--cal">
                         <p class="explanation__title explanation__title--short">日比整体</p>
                         <div class="explanation__content explanation__content--normal">
-                            <p>【土日祝】08:00~11:00/02:00~05:00</p>
+                            <p>【土日祝】08:00~11:00/14:00~17:00</p>
                             <p>【休診日】水曜・第1/3/5火曜・不定休 </p>
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                                     <td>休</td>
                                 </tr>
                                 <tr>
-                                    <td>03:00~06:30</td>
+                                    <td>15:00~18:30</td>
                                     <td>◯</td>
                                     <td>◯</td>
                                     <td>休</td>
@@ -232,7 +232,7 @@
                     <div class="calendar__list explanation explanation--cal">
                         <p class="explanation__title explanation__title--short">だいせんじ接骨院</p>
                         <div class="explanation__content explanation__content--normal">
-                            <p>【土日祝】08:00~11:00/02:00~05:00</p>
+                            <p>【土日祝】08:00~11:00/14:00~17:00</p>
                             <p>【休診日】水曜・第1/3/5火曜・日曜(月2回)・不定休</p>
                         </div>
                     </div>

@@ -500,6 +500,15 @@ img {
     display: none;
   }
 }
+.rese--seitai {
+  display: none;
+  text-align: center;
+}
+@media (width >= 1024px) {
+  .rese--seitai {
+    display: grid;
+  }
+}
 .rese__line {
   color: #FFFFFF;
   padding: 0.625rem 0.625rem;
@@ -513,6 +522,7 @@ img {
   border: 2px solid #001F3F;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0.625rem 0.625rem;
   text-align: center;
   border-radius: 1.875rem;
@@ -907,7 +917,7 @@ img {
 }
 .mainvisual__title {
   margin-top: 1.875rem;
-  margin-bottom: 6.25rem;
+  margin-bottom: 4.375rem;
   color: #FFD75F;
   font-size: 1.25rem;
   font-weight: bold;
@@ -1389,7 +1399,7 @@ img {
   margin-right: auto;
 }
 .about__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1424,7 +1434,7 @@ img {
   }
 }
 .about__content {
-  margin-bottom: 12.5rem;
+  margin-bottom: 6.25rem;
   text-align: left;
   max-width: 60ch;
   line-height: 1.8;
@@ -1455,7 +1465,7 @@ img {
   margin-right: auto;
 }
 .information__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1533,7 +1543,7 @@ img {
   margin-right: auto;
 }
 .access__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1626,7 +1636,7 @@ img {
   margin-right: auto;
 }
 .calendar__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1697,7 +1707,7 @@ img {
   margin-right: auto;
 }
 .point__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1739,7 +1749,7 @@ img {
   margin-right: auto;
 }
 .symptoms__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1781,7 +1791,7 @@ img {
   margin-right: auto;
 }
 .worthy__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1816,7 +1826,7 @@ img {
   }
 }
 .worthy__title--sekkotsu {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1877,7 +1887,7 @@ img {
   margin-right: auto;
 }
 .staff__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -1951,7 +1961,7 @@ img {
   margin-right: auto;
 }
 .flow__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -2099,7 +2109,7 @@ img {
   margin-right: auto;
 }
 .menu__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;
@@ -2161,7 +2171,7 @@ img {
   margin-right: auto;
 }
 .fee__title {
-  margin-top: 8.125rem;
+  margin-top: 3.125rem;
   margin-bottom: 3.125rem;
   color: #FFD75F;
   font-size: 1.25rem;

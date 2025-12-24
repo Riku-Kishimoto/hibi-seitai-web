@@ -9,6 +9,11 @@
             </div>
         </section>
 
+        <div class="rese rese--seitai">
+                <p class="rese__tel" href="#">こちらは日比整体ページです</p>
+                <a class="rese__tel" href="<?php echo home_url('/sekkotsu/'); ?>">だいせんじ接骨院はこちら</a>
+            </div>
+
         <section id="menu" class="menu">
             <div class="menu__inner">
                 <h3 class="menu__title"><span>メニュー</span></h3>

@@ -40,7 +40,7 @@
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
                             <div class="card__figure__media">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sokuatu.png" alt="" class="card__img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sokuatu.webp" alt="" class="card__img">
                             </div>
                             <figcaption class="card__caption">
                                 当院では、熟練の施術者が足裏を使って深部のコリをほぐす
@@ -58,7 +58,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/ordermade.png" alt="" class="card__img card__img--second">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/ordermade.webp" alt="" class="card__img card__img--second">
                             <figcaption class="card__caption">
                                 当院では、「ボキボキが苦手」「強い刺激が不安」という方も安心。
                                 体の状態に合わせて、やさしい整体からしっかり圧の施術まで柔軟に対応します。
@@ -76,7 +76,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/zennshin.png" alt="" class="card__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/zennshin.webp" alt="" class="card__img">
                             <figcaption class="card__caption">
                                 痛みのケアだけでなく、体全体のバランスを整えるのが当院の全身矯正です。
                                 骨盤を中心に整えることで、肩や腰への負担を軽くし、不調の出にくい体づくりをサポートします。
@@ -159,7 +159,7 @@
 
                 <div class="worthy__grid">
                     <div class="worthy__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/capusel.png" alt="酸素カプセルの写真">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/capusel.webp" alt="酸素カプセルの写真">
                     </div>
 
                     <div class="worthy__items table">
@@ -204,7 +204,7 @@
                     <div class="person__info">
 
                         <div class="person__info__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/hibitakeru.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/hibitakeru.webp" alt="">
                         </div>
 
                         <div class="person__info__role">院長</div>
@@ -231,7 +231,7 @@
                     <div class="person__info">
 
                         <div class="person__info__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/keitaniguchi.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/keitaniguchi.webp" alt="">
                         </div>
 
                         <div class="person__info__name">

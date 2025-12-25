@@ -43,7 +43,7 @@
                 <article class="clinic">
                     <div class="clinic__top">
                         <div class="clinic__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_visual.png" alt="日比整体">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_visual.webp" alt="日比整体">
                         </div>
                         <div class="clinic__content explanation">
                             <h3 class="clinic__title explanation__title">日比整体</h3>
@@ -68,7 +68,7 @@
                 <article class="clinic">
                     <div class="clinic__top">
                         <div class="clinic__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotuinn_visual.png" alt="日比整体">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotuinn_visual.webp" alt="日比整体">
                         </div>
                         <div class="clinic__content explanation">
                             <h3 class="clinic__title explanation__title">だいせんじ接骨院</h3>

@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div id="loading" class="loading">
+        <!-- <div id="loading" class="loading">
             <div class="loading__list">
                 <svg class="wave" width="160" height="30" viewBox="0 0 160 30">
                     <path
@@ -79,7 +79,7 @@
                 </svg>
                 <p class="loading__text">読み込み中…</p>
             </div>
-        </div>
+        </div> -->
 
         <nav class="gnav fade-in-section">
             <div class="gnav__inner fade-in-item">

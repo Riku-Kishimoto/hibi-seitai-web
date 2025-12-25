@@ -19,7 +19,7 @@
                 <h3 class="menu__title"><span>メニュー</span></h3>
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu1.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu1.webp" alt="">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">首・肩の施術</h4>
@@ -32,7 +32,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow4.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow4.webp" alt="">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">肩甲骨の施術</h4>
@@ -45,7 +45,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu3.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu3.webp" alt="">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">足の施術</h4>
@@ -58,7 +58,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu4.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu4.webp" alt="">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">足関節矯正</h4>
@@ -71,7 +71,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu5.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu5.webp" alt="">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">頸椎牽引矯正</h4>
@@ -84,7 +84,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu6.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_menu6.webp" alt="">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">猫背の矯正</h4>
@@ -167,7 +167,7 @@
                             <p class="flow__step">STEP.01</p>
                             <h4 class="flow__heading">受付</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow1.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow1.webp" alt="">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -199,7 +199,7 @@
                             <p class="flow__step">STEP.03</p>
                             <h4 class="flow__heading">温熱マット（約20分/自由選択）</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow2.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow2.webp" alt="">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -215,7 +215,7 @@
                             <p class="flow__step">STEP.04</p>
                             <h4 class="flow__heading">検査・触診</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow3.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow3.webp" alt="">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -231,7 +231,7 @@
                             <p class="flow__step">STEP.05</p>
                             <h4 class="flow__heading">施術（約40分）</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow4.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow4.webp" alt="">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -248,7 +248,7 @@
                             <p class="flow__step">STEP.06</p>
                             <h4 class="flow__heading">ご説明・アドバイス</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow5.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow5.webp" alt="">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -264,7 +264,7 @@
                             <p class="flow__step">STEP.07</p>
                             <h4 class="flow__heading">ローラーベッド（約8分/自由選択）</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow6.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow6.webp" alt="">
                             </div>
                             <div class="flow__text">
                                 <p>

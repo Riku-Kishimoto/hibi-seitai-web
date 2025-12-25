@@ -229,9 +229,6 @@ img {
     display: grid;
 }
 
-
-
-
 //ハンバーガーメニュー
 
 .hamburger {
@@ -1074,45 +1071,45 @@ img {
         }
 
         .slider-img:nth-child(1) {
-            background: url(../images/mainvisual_kadan-mobile.png) no-repeat center center / cover;
+            background: url(../images/mainvisual_kadan-mobile.webp) no-repeat center center / cover;
             animation-delay: 0s;
 
             @include mq() {
-                background: url(../images/mainvisual-kadan.png) no-repeat center center / cover;
+                background: url(../images/mainvisual-kadan.webp) no-repeat center center / cover;
             }
         }
 
         .slider-img:nth-child(2) {
-            background: url(../images/mainvisual_seitai-mobile3.png) no-repeat center center / cover;
+            background: url(../images/mainvisual_seitai-mobile3.webp) no-repeat center center / cover;
             animation-delay: 5s;
 
             @include mq() {
-                background: url(../images/mainvisual_seitai.png) no-repeat center center / cover;
+                background: url(../images/mainvisual_seitai.webp) no-repeat center center / cover;
             }
         }
 
         .slider-img:nth-child(3) {
-            background: url(../images/mainvisual-sekkotu-mobile2.png) no-repeat center center / cover;
+            background: url(../images/mainvisual-sekkotu-mobile2.webp) no-repeat center center / cover;
             animation-delay: 10s;
 
             @include mq() {
-                background: url(../images/mainvisual_sekkotu.png) no-repeat center center / cover;
+                background: url(../images/mainvisual_sekkotu.webp) no-repeat center center / cover;
             }
         }
 
         &--seitai {
-            background: url(../images/mainvisual_seitai-mobile3.png) no-repeat center center / cover;
+            background: url(../images/mainvisual_seitai-mobile3.webp) no-repeat center center / cover;
 
             @include mq() {
-                background: url(../images/mainvisual_seitai.png) no-repeat center center / cover;
+                background: url(../images/mainvisual_seitai.webp) no-repeat center center / cover;
             }
         }
 
         &--sekkotu {
-            background: url(../images/mainvisual-sekkotu-mobile.png) no-repeat center center / cover;
+            background: url(../images/mainvisual-sekkotu-mobile.webp) no-repeat center center / cover;
 
             @include mq() {
-                background: url(../images/mainvisual_sekkotu.png) no-repeat center center / cover;
+                background: url(../images/mainvisual_sekkotu.webp) no-repeat center center / cover;
             }
         }
 

@@ -64,8 +64,16 @@
                 </div>
             </div>
             <div class="footer__sns">
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Instagram_Glyph_Black.svg" alt="Instagramへのリンク"></a>
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/youtube_social_icon_dark.png" alt="YouTubeへのリンク"></a>
+                <a href="https://www.instagram.com/hibiseitai/" target="_blank" rel="noopener">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Instagram_Glyph_Black.svg"
+                        alt="Instagramへのリンク">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHM63UeOF5oRmwf-WXDowMQ"
+                    target="_blank"
+                    rel="noopener">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/youtube_social_icon_dark.png"
+                    alt="日比整体のYouTubeチャンネルへのリンク">
+                </a>
             </div>
 
         </div>

@@ -721,6 +721,24 @@ img {
     }
 }
 
+.rese--always {
+    position: fixed;
+    display: grid;
+    row-gap: rem(10);
+    font-size: rem(15);
+    font-weight: bold;
+    right: 5vw;
+    bottom: 5vw;
+    z-index: 9999;
+
+    opacity: 1;
+    visibility: visible;
+
+    @include mq() {
+        display: none;
+    }
+}
+
 .btn {
     display: flex;
     justify-content: center;
@@ -882,8 +900,8 @@ img {
         gap: 14px;
 
         a img {
-            min-width: 28px;
-            height: 28px;
+            max-width: 39px;
+            max-height: 28px;
         }
     }
 
@@ -1039,6 +1057,23 @@ img {
             transform: translate(-50%, 0);
         }
     }
+}
+
+.dropdowntext>a {
+    position: relative;
+    color: transparent;
+}
+
+.dropdowntext>a::after {
+    content: "メニュー・料金";
+    position: absolute;
+    left: 0;
+    top: 1;
+    color: $color-accent;
+}
+
+.dropdowntext:hover>a::after {
+    content: "下記から選択";
 }
 
 //メインビジュアル
@@ -1322,7 +1357,7 @@ img {
     margin-bottom: rem(100);
 
     &__top {
-        margin-bottom: rem(50);
+        //margin-bottom: rem(50);
 
         @include mq(tablet) {
             display: grid;

@@ -52,7 +52,7 @@ jQuery(function ($) {
     $(window).trigger('scroll');
 
 
-    const $rese = $('.rese');
+    const $rese = $('.rese').not('.rese--always');
     const reseThreshold = 100;
 
     $(window).on('scroll', function () {

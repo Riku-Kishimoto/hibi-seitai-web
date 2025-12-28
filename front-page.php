@@ -58,9 +58,20 @@
                         <ul class="clinic__tags">
                             <li><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #calendar">土日祝も早朝営業</a></li>
                             <li><a href="<?php echo home_url('/seitai/'); ?>#point">独自の足圧施術</a></li>
-                            <li><a href="">予約状況配信中</a></li>
+                            <li><a href="<?php echo home_url('/seitai/#symptoms'); ?>">肩こり・腰痛対応</a></li>
                             <li><a href="<?php echo home_url('/seitai/#worthy'); ?>">酸素カプセル</a></li>
                         </ul>
+                        <!-- <div>
+                            <h4 class="table__title">こんな方におすすめ</h4>
+                        <div class="table__list">
+                            <ol class="table__list__item">
+                                <li>疲れが取れにくい</li>
+                                <li>肩こり・頭痛がつらい</li>
+                                <li>集中力を高めたい</li>
+                                <li>ケガの回復を早めたい</li>
+                            </ol>
+                        </div>
+                        </div> -->
                         <a href="<?php echo home_url('/seitai/'); ?>" class="btn btn--clinic">日比整体個別ページへ<span class="dli-arrow-right"></span></a>
                     </div>
                 </article>

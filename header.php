@@ -48,12 +48,17 @@
                             echo esc_html( $custom_field_value );
                         }
                         ?></a></p>
-                    <a class="btn header__btn btn--top" href="">LINEで予約</a>
+                    <a class="btn header__btn btn--top"
+                        href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+                        target="_blank"
+                        rel="noopener">LINEで予約</a>
                 </div>
 
             </div>
-            <div class="rese">
-                <a class="rese__line" href="#">LINEで予約</a>
+            <div class="rese rese--always">
+                <a class="rese__line" href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+                        target="_blank"
+                        rel="noopener">LINEで予約</a>
                 <a class="rese__tel" href="tel:0568843383"><span class="material-symbols-outlined">
                         call
                     </span><?php
@@ -98,7 +103,7 @@
                             <li><a href="<?php echo home_url('/sekkotsu/#staff'); ?>">スタッフ紹介</a></li>
                         </ul>
                     </li>
-                    <li class="gnav__item dropdown"><a href="#">メニュー・料金</a>
+                    <li class="gnav__item dropdown dropdowntext"><a href="#">メニュー・料金</a>
                         <ul class="dropdown__menu dropdown__menu--big">
                             <li><a href="<?php echo home_url('/seitai-menu/'); ?>">整体&nbsp;メニュー・料金</a></li>
                             <li><a href="<?php echo home_url('/sekkotsu-menu/'); ?>">接骨院&nbsp;メニュー・料金</a></li>
@@ -122,7 +127,7 @@
                         <li class="gnav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
                         <li class="gnav__item"><a href="<?php echo home_url('/seitai/'); ?>">日比整体</a></li>
                         <li class="gnav__item"><a href="<?php echo home_url('/sekkotsu/'); ?>">だいせんじ接骨院</a></li>
-                        <li class="gnav__item dropdown"><a href="#">メニュー・料金</a>
+                        <li class="gnav__item dropdown dropdowntext"><a href="#">メニュー・料金</a>
                             <ul class="dropdown__menu dropdown__menu--big dropdown__menu--navigation">
                                 <li class="gnav__item--nonhov"><a href="<?php echo home_url('/seitai-menu/'); ?>">整体&nbsp;メニュー・料金</a></li>
                                 <li class="gnav__item--nonhov"><a href="<?php echo home_url('/sekkotsu-menu/'); ?>">接骨院&nbsp;メニュー・料金</a></li>
@@ -131,7 +136,9 @@
                         <li class="gnav__item"><a href="<?php echo home_url('/sekkotsu/#worthy'); ?>">交通事故治療</a></li>
                         <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #access">アクセス</a></li>
                         <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #calendar">営業案内</a></li>
-                        <li class="gnav__item gnav__item--nonhov gnav__item--btn"><a class="btn" href="">LINEで予約</a>
+                        <li class="gnav__item gnav__item--nonhov gnav__item--btn"><a class="btn" href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+                        target="_blank"
+                        rel="noopener">LINEで予約</a>
                         </li>
                     </ul>
                 </div>
@@ -169,7 +176,9 @@
                 <li class="nav-overlay__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #calendar" class="nav-overlay__link">営業案内</a>
                 </li>
                 <div class="nav-overlay__rese nav-overlay__item">
-                    <a class="rese__line" href="#">LINEで予約</a>
+                    <a class="rese__line" href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+                        target="_blank"
+                        rel="noopener">LINEで予約</a>
                     <a class="rese__tel" href="tel:0568843383"><span class="material-symbols-outlined">
                         call
                     </span><?php

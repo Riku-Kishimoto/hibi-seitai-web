@@ -532,6 +532,24 @@ img {
   visibility: visible;
 }
 
+.rese--always {
+  position: fixed;
+  display: grid;
+  row-gap: 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  right: 5vw;
+  bottom: 5vw;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+}
+@media (width >= 1024px) {
+  .rese--always {
+    display: none;
+  }
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -681,8 +699,8 @@ img {
   gap: 14px;
 }
 .footer__sns a img {
-  min-width: 28px;
-  height: 28px;
+  max-width: 39px;
+  max-height: 28px;
 }
 .footer__copy {
   padding: 1rem;
@@ -821,6 +839,23 @@ img {
     visibility: visible;
     transform: translate(-50%, 0);
   }
+}
+
+.dropdowntext > a {
+  position: relative;
+  color: transparent;
+}
+
+.dropdowntext > a::after {
+  content: "メニュー・料金";
+  position: absolute;
+  left: 0;
+  top: 1;
+  color: #001F3F;
+}
+
+.dropdowntext:hover > a::after {
+  content: "下記から選択";
 }
 
 .mainvisual {
@@ -1098,9 +1133,6 @@ img {
 
 .clinic {
   margin-bottom: 6.25rem;
-}
-.clinic__top {
-  margin-bottom: 3.125rem;
 }
 @media (width >= 768px) {
   .clinic__top {

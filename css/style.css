@@ -477,6 +477,21 @@ img {
   border-radius: 1.25rem;
 }
 
+.dropdowntext > a {
+  position: relative;
+  color: transparent;
+}
+.dropdowntext > a::after {
+  content: "メニュー・料金";
+  position: absolute;
+  left: 0;
+  top: 1;
+  color: #001F3F;
+}
+.dropdowntext:hover > a::after {
+  content: "下記から選択";
+}
+
 .gnav__list .dropdown:hover .dropdown__menu {
   opacity: 1;
   visibility: visible;
@@ -843,19 +858,23 @@ img {
 
 .dropdowntext > a {
   position: relative;
-  color: transparent;
+  display: inline-block;
 }
-
-.dropdowntext > a::after {
-  content: "メニュー・料金";
+.dropdowntext .nav-default,
+.dropdowntext .nav-hover {
+  white-space: nowrap;
+}
+.dropdowntext .nav-hover {
   position: absolute;
   left: 0;
   top: 1;
-  color: #001F3F;
+  opacity: 0;
 }
-
-.dropdowntext:hover > a::after {
-  content: "下記から選択";
+.dropdowntext:hover .nav-default {
+  opacity: 0;
+}
+.dropdowntext:hover .nav-hover {
+  opacity: 1;
 }
 
 .mainvisual {

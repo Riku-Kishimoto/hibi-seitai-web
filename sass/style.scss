@@ -654,6 +654,24 @@ img {
     }
 }
 
+.dropdowntext {
+    &>a {
+        position: relative;
+        color: transparent;
+
+        &::after {
+            content: "メニュー・料金";
+            position: absolute;
+            left: 0;
+            top: 1;
+            color: $color-accent;
+        }
+    }
+
+    &:hover>a::after {
+        content: "下記から選択";
+    }
+}
 
 .gnav__list .dropdown:hover .dropdown__menu {
     opacity: 1;
@@ -1059,21 +1077,33 @@ img {
     }
 }
 
-.dropdowntext>a {
-    position: relative;
-    color: transparent;
-}
+.dropdowntext {
+    >a {
+        position: relative;
+        display: inline-block;
+    }
 
-.dropdowntext>a::after {
-    content: "メニュー・料金";
-    position: absolute;
-    left: 0;
-    top: 1;
-    color: $color-accent;
-}
+    .nav-default,
+    .nav-hover {
+        white-space: nowrap;
+    }
 
-.dropdowntext:hover>a::after {
-    content: "下記から選択";
+    .nav-hover {
+        position: absolute;
+        left: 0;
+        top: 1;
+        opacity: 0;
+    }
+
+    &:hover {
+        .nav-default {
+            opacity: 0;
+        }
+
+        .nav-hover {
+            opacity: 1;
+        }
+    }
 }
 
 //メインビジュアル

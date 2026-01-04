@@ -29,7 +29,9 @@
                 </div>
 
                 <div class="footer__btns">
-                    <a href="#" class="btn btn--line">LINEで予約</a>
+                    <a href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+                        target="_blank"
+                        rel="noopener" class="btn btn--line">LINEで予約</a>
                     <a href="tel:0568843383" class="btn btn--tel"><?php
                         $custom_field_value = SCF::get_option_meta( 'theme-options', 'about-tel' );
                         if ( $custom_field_value ) {

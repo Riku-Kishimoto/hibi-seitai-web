@@ -86,8 +86,8 @@
             </div>
         </div> -->
 
-        <nav class="gnav fade-in-section">
-            <div class="gnav__inner fade-in-item">
+        <nav class="gnav">
+            <div class="gnav__inner">
                 <ul class="gnav__list">
                     <li class="gnav__item dropdown"><a href="<?php echo home_url('/seitai/'); ?>">日比整体</a>
                         <ul class="dropdown__menu">

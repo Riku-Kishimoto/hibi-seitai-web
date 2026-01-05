@@ -133,6 +133,10 @@ $breakpoints: (
 //  共通部分
 // =================================================================
 
+@view-transition {
+    navigation: auto;
+}
+
 html {
     scroll-behavior: smooth;
 }

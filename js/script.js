@@ -139,17 +139,83 @@ updateIndicator();
 //ローディングアニメーション
 
 
+// const loading = document.getElementById('loading');
+
+// if (!sessionStorage.getItem('visited')) {
+//     loading.classList.add('is-active');
+
+//     window.addEventListener('load', () => {
+//         setTimeout(() => {
+//             loading.classList.add('is-hidden');
+//             sessionStorage.setItem('visited', 'true');
+//         }, 2000);
+//     });
+// } else {
+//     loading.style.display = 'none';
+// }
+
 const loading = document.getElementById('loading');
 
-if (!sessionStorage.getItem('visited')) {
-    loading.classList.add('is-active');
+if (loading) {
+    if (!sessionStorage.getItem('visited')) {
+        loading.classList.add('is-active');
 
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loading.classList.add('is-hidden');
-            sessionStorage.setItem('visited', 'true');
-        }, 2000);
-    });
-} else {
-    loading.style.display = 'none';
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loading.classList.add('is-hidden');
+                sessionStorage.setItem('visited', 'true');
+            }, 2000);
+        });
+    } else {
+        loading.style.display = 'none';
+    }
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const listWrap = document.querySelector('#item-list');
+
+    if (!listWrap) {
+        console.error('#item-list が見つからない');
+        return;
+    }
+
+    try {
+        const res = await fetch(`${wpApiSettings.root}wp/v2/item?per_page=100`, {
+            headers: {
+                'X-WP-Nonce': wpApiSettings.nonce
+            }
+        });
+
+        if (!res.ok) {
+            throw new Error('API取得失敗');
+        }
+
+        const items = await res.json();
+
+        if (!items.length) {
+            listWrap.innerHTML = '<h2>料金表一覧</h2><p>データがありません</p>';
+            return;
+        }
+
+        let html = '<h2>料金表一覧</h2><ul>';
+
+        items.forEach(item => {
+            html += `
+        <li style="margin-bottom:10px;">
+          ${item.title.rendered}
+          <a href="${wpApiSettings.home}/wp-admin/post.php?post=${item.id}&action=edit" style="margin-left:10px;">
+            編集
+          </a>
+        </li>
+      `;
+        });
+
+        html += '</ul>';
+
+        listWrap.innerHTML = html;
+
+    } catch (err) {
+        console.error(err);
+        listWrap.innerHTML = '<p style="color:red;">読み込みエラー</p>';
+    }
+});

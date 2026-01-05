@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@view-transition {
+  navigation: auto;
+}
 html {
   scroll-behavior: smooth;
 }

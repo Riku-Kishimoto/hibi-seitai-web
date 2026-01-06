@@ -136,24 +136,6 @@ function updateIndicator() {
 setInterval(updateIndicator, 5000);
 updateIndicator();
 
-//ローディングアニメーション
-
-
-// const loading = document.getElementById('loading');
-
-// if (!sessionStorage.getItem('visited')) {
-//     loading.classList.add('is-active');
-
-//     window.addEventListener('load', () => {
-//         setTimeout(() => {
-//             loading.classList.add('is-hidden');
-//             sessionStorage.setItem('visited', 'true');
-//         }, 2000);
-//     });
-// } else {
-//     loading.style.display = 'none';
-// }
-
 const loading = document.getElementById('loading');
 
 if (loading) {
@@ -218,4 +200,218 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error(err);
         listWrap.innerHTML = '<p style="color:red;">読み込みエラー</p>';
     }
+});
+
+jQuery(function ($) {
+
+    const apiRoot = wpApiSettings.root + 'wp/v2/posts';
+    const nonce = wpApiSettings.nonce;
+
+    // 一覧取得
+    function loadNews() {
+        $.get(apiRoot, { per_page: 10 })
+            .done(function (posts) {
+                let html = '';
+
+                posts.forEach(post => {
+                    html += `
+                        <div class="news-item" data-id="${post.id}">
+                            <h3>${post.title.rendered}</h3>
+                            <button class="edit">編集</button>
+                            <button class="delete">削除</button>
+                        </div>
+                    `;
+                });
+
+                $('#news-list').html(html);
+            });
+    }
+
+    loadNews();
+
+    // 新規追加
+    $('#add-news').on('click', function () {
+        $('#news-id').val('');
+        $('#news-title').val('');
+        $('#news-content').val('');
+        $('#news-form').show();
+    });
+
+    // 編集
+    $(document).on('click', '.edit', function () {
+        const id = $(this).closest('.news-item').data('id');
+
+        $.get(`${apiRoot}/${id}`)
+            .done(post => {
+                $('#news-id').val(post.id);
+                $('#news-title').val(post.title.rendered);
+                $('#news-content').val(post.content.raw);
+                $('#news-form').show();
+            });
+    });
+
+    $(document).on('click', '.edit', function () {
+        const id = $(this).closest('.item-row').data('id');
+
+        $.ajax({
+            url: `${apiRoot}/${id}?context=edit`,
+            method: 'GET',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', nonce);
+            }
+        }).done(item => {
+            $('#item-id').val(item.id);
+            $('#item-title').val(item.title.raw);
+            $('#item-content').val(item.content.raw); // ← ここ重要
+            $('#item-price').val(item.meta?.price ?? '');
+            $('#item-form').show();
+        });
+    });
+
+    // 保存（追加 or 更新）
+    $('#save-news').on('click', function () {
+        const id = $('#news-id').val();
+        const method = id ? 'POST' : 'POST';
+        const url = id ? `${apiRoot}/${id}` : apiRoot;
+
+        $.ajax({
+            url: url,
+            method: method,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', nonce);
+            },
+            data: {
+                title: $('#news-title').val(),
+                content: $('#news-content').val(),
+                status: 'publish'
+            }
+        }).done(() => {
+            $('#news-form').hide();
+            loadNews();
+        });
+    });
+
+    // 削除
+    $(document).on('click', '.delete', function () {
+        if (!confirm('削除しますか？')) return;
+
+        const id = $(this).closest('.news-item').data('id');
+
+        $.ajax({
+            url: `${apiRoot}/${id}`,
+            method: 'DELETE',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', nonce);
+            }
+        }).done(loadNews);
+    });
+
+    // キャンセル
+    $('#cancel-news').on('click', function () {
+        $('#news-form').hide();
+    });
+
+});
+
+jQuery(function ($) {
+
+    const apiRoot = wpApiSettings.root + 'wp/v2/item';
+    const nonce = wpApiSettings.nonce;
+
+    // 一覧取得
+    function loadItems() {
+        $.get(apiRoot, { per_page: 20 })
+            .done(function (items) {
+                if (!items.length) {
+                    $('#items').html('<p>料金表がありません</p>');
+                    return;
+                }
+
+                let html = '';
+                items.forEach(item => {
+                    html += `
+                        <div class="item-row" data-id="${item.id}">
+                            <strong>${item.title.rendered}</strong>
+                            <div class="actions">
+                                <button class="edit">編集</button>
+                                <button class="delete">削除</button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                $('#items').html(html);
+            });
+    }
+
+    loadItems();
+
+    // 追加
+    $('#add-item').on('click', function () {
+        $('#item-id').val('');
+        $('#item-title').val('');
+        $('#item-content').val('');
+        $('#item-price').val('');
+        $('#item-form').show();
+    });
+
+    // 編集
+    $(document).on('click', '.edit', function () {
+        const id = $(this).closest('.item-row').data('id');
+
+        $.get(`${apiRoot}/${id}`)
+            .done(item => {
+                $('#item-id').val(item.id);
+                $('#item-title').val(item.title.rendered);
+                $('#item-content').val(item.content.raw);
+                $('#item-price').val(item.meta?.price ?? '');
+                $('#item-form').show();
+            });
+    });
+
+    // 保存（追加・更新）
+    $('#save-item').on('click', function () {
+        const id = $('#item-id').val();
+        const url = id ? `${apiRoot}/${id}` : apiRoot;
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', nonce);
+            },
+            data: {
+                title: $('#item-title').val(),
+                content: $('#item-content').val(),
+                status: 'publish',
+                meta: {
+                    price: $('#item-price').val()
+                }
+            }
+        }).done(() => {
+            $('#item-form').hide();
+            loadItems();
+        });
+    });
+
+    // 削除
+    $(document).on('click', '.delete', function () {
+        if (!confirm('この料金表を削除しますか？')) return;
+
+        const id = $(this).closest('.item-row').data('id');
+
+        $.ajax({
+            url: `${apiRoot}/${id}`,
+            method: 'DELETE',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', nonce);
+            }
+        }).done(loadItems);
+    });
+
+    // キャンセル
+    $('#cancel-item').on('click', function () {
+        $('#item-form').hide();
+    });
+
 });

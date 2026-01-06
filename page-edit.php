@@ -1,79 +1,177 @@
 <?php
+/* Template Name: 料金表一覧（編集用） */
+
 add_filter('show_admin_bar', '__return_false');
-// add_filter('show_admin_bar', function() {
-//     return false;
-// });
+
 if ( !is_user_logged_in() ) {
-    // ログインしていない場合はログイン画面へ（ログイン後にこのページに戻す）
     auth_redirect();
 }
 
 if ( !current_user_can('edit_posts') ) {
-    // ログインはしてるけど編集権限がない（購読者など）場合
     wp_die('このページの編集権限がありません。管理者に問い合わせてください。');
 }
 
-// 2. 編集対象のID取得
-// 編集対象のIDを判定
-if ( !empty($_GET['id']) ) {
-    // URLに ?id=xx がある場合はそれを使用
-    $post_id = intval($_GET['id']);
-} else {
-    // URLにIDがない場合は、最新の料金表（item）を1件取得
-    $latest_items = get_posts(array(
-        'post_type'      => 'item',
-        'posts_per_page' => 1,
-        'post_status'    => 'publish' // 公開済みのものだけ
-    ));
-    $post_id = !empty($latest_items) ? $latest_items[0]->ID : 0;
-}
-
-// 最終確認：IDが0（どこにも該当しない）ならエラーを出す
-if ( !$post_id ) {
-    wp_die('編集できる料金表（投稿）が見つかりません。');
-}
-
-// 3. REST API用のスクリプト設定
-wp_enqueue_script(
-  'main-script',
-  get_template_directory_uri() . '/js/script.js',
-  array('jquery'),
-  '1.0',
-  true
-);
-
-wp_localize_script('main-script', 'wpApiSettings', array(
-    'root'   => esc_url_raw(rest_url()),
-    'nonce'  => wp_create_nonce('wp_rest'),
-    'postId' => $post_id,
-    'home'   => home_url()
-));
+get_header("edit");
 
 ?>
 
 <main>
-    <div class="editor-container" style="max-width: 800px; margin: 20px auto; padding: 20px;">
-        <h1>料金表の編集 (ID: <?php echo $post_id; ?>)</h1>
-
-        <div id="loading-status">データを読み込み中... (ID: <?php echo $post_id; ?>)</div>
-
-        <div id="edit-form" style="display:none;">
-            <div id="items-wrapper"></div>
-            <div style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 20px;">
-                <button type="button" id="add-row-btn">＋ 行を追加する</button>
-                <button type="button" id="save-btn" style="background: #0073aa; color: #fff; border: none; padding: 10px 30px; cursor: pointer;">
-                    保存する
-                </button>
-            </div>
-        </div>
-        <p style="margin-top: 20px;"><a href="<?php echo home_url(); ?>">← 戻る</a></p>
+    <div id="item-list">
+        <h2>料金表一覧</h2>
+        <p>読み込み中...</p>
     </div>
+    <div class="admin-actions">
+    <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
+            class="btn-add">
+            ＋ 新しい料金メニューを追加
+        </a>
+    </div>
+    <?php
+$groups = [
+    'seitai-menu'   => '整体の料金',
+    'sekkotsu-menu' => '接骨院の料金',
+    'none'     => 'その他の料金',
+];
 
-<div id="item-list" style="max-width:800px;margin:40px auto;">
-  <h2>料金表一覧</h2>
-  <p>読み込み中...</p>
+// タグ付き
+foreach (['seitai-menu', 'sekkotsu-menu'] as $slug) {
+
+    $items = get_posts([
+        'post_type'      => 'item',
+        'posts_per_page' => -1,
+        'tax_query'      => [
+            [
+                'taxonomy' => 'item_cat', // 独自なら taxonomy 名
+                'field'    => 'slug',
+                'terms'    => $slug,
+            ],
+        ],
+    ]);
+
+    if (!$items) continue;
+
+    echo '<section class="admin-group">';
+    echo '<h3>' . esc_html($groups[$slug]) . '</h3>';
+    echo '<ul>';
+
+    foreach ($items as $item) {
+        echo '<li>';
+        echo esc_html($item->post_title);
+
+        echo ' <a href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
+        echo ' <a href="' . get_delete_post_link($item->ID, '', true) . '"
+                    onclick="return confirm(\'削除しますか？\')"
+                    style="color:red;">削除</a>';
+
+        echo '</li>';
+    }
+
+    echo '</ul>';
+    echo '</section>';
+}
+
+// タグなし
+$no_tag_items = get_posts([
+    'post_type'      => 'item',
+    'posts_per_page' => -1,
+    'tax_query'      => [
+        [
+            'taxonomy' => 'item_cat',
+            'operator' => 'NOT EXISTS',
+        ],
+    ],
+]);
+
+if ($no_tag_items) {
+    echo '<section class="admin-group">';
+    echo '<h3>' . esc_html($groups['none']) . '</h3>';
+    echo '<ul>';
+
+    foreach ($no_tag_items as $item) {
+        echo '<li>';
+        echo esc_html($item->post_title);
+
+        echo ' <a href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
+        echo ' <a href="' . get_delete_post_link($item->ID, '', true) . '"
+                    onclick="return confirm(\'削除しますか？\')"
+                    style="color:red;">削除</a>';
+
+        echo '</li>';
+    }
+
+    echo '</ul>';
+    echo '</section>';
+}
+?>
+
+<!-- 追加・編集フォーム -->
+<div id="item-form" style="display:none;">
+    <input type="hidden" id="item-id">
+
+    <label>
+        メニュー名
+        <input type="text" id="item-title">
+    </label>
+
+    <label>
+        説明
+        <textarea id="item-content"></textarea>
+    </label>
+
+    <label>
+        価格
+        <input type="text" id="item-price">
+    </label>
+
+    <div class="form-buttons">
+        <button id="save-item">保存</button>
+        <button id="cancel-item">キャンセル</button>
+    </div>
 </div>
+
+    <section class="admin-news">
+    <h2>お知らせ管理</h2>
+
+    <button id="add-news">＋ 新しいお知らせ</button>
+
+    <div id="news-list">
+        <p>読み込み中...</p>
+    </div>
+</section>
+
+<!-- 新規・編集フォーム -->
+<div id="news-form" style="display:none;">
+    <input type="hidden" id="news-id">
+
+    <label>
+        タイトル
+        <input type="text" id="news-title">
+    </label>
+
+    <label>
+        内容
+        <textarea id="news-content"></textarea>
+    </label>
+
+    <button id="save-news">保存</button>
+    <button id="cancel-news">キャンセル</button>
+</div>
+
 </main>
 
-<?php wp_footer(); ?>
-</body>
+<?php
+wp_enqueue_script(
+    'main-script',
+    get_template_directory_uri() . '/js/script.js',
+    array('jquery'),
+    '1.0',
+    true
+);
+
+wp_localize_script('main-script', 'wpApiSettings', array(
+    'root'  => esc_url_raw(rest_url()),
+    'nonce' => wp_create_nonce('wp_rest'),
+    'home'  => home_url()
+));
+
+get_footer("edit");

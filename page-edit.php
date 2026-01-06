@@ -16,43 +16,38 @@ get_header("edit");
 ?>
 
 <main>
-    <div id="item-list">
+    <!-- <div id="item-list">
         <h2>料金表一覧</h2>
         <p>読み込み中...</p>
-    </div>
-    <div class="admin-actions">
-    <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
-            class="btn-add">
-            ＋ 新しい料金メニューを追加
-        </a>
-    </div>
+    </div> -->
+
     <?php
-$groups = [
-    'seitai-menu'   => '整体の料金',
-    'sekkotsu-menu' => '接骨院の料金',
-    'none'     => 'その他の料金',
-];
+        $groups = [
+            'seitai-menu'   => '整体の料金',
+            'sekkotsu-menu' => '接骨院の料金',
+            'none'     => 'その他の料金',
+        ];
 
-// タグ付き
-foreach (['seitai-menu', 'sekkotsu-menu'] as $slug) {
+    // タグ付き
+        foreach (['seitai-menu', 'sekkotsu-menu'] as $slug) {
 
-    $items = get_posts([
-        'post_type'      => 'item',
-        'posts_per_page' => -1,
-        'tax_query'      => [
-            [
-                'taxonomy' => 'item_cat', // 独自なら taxonomy 名
-                'field'    => 'slug',
-                'terms'    => $slug,
-            ],
-        ],
-    ]);
+            $items = get_posts([
+                'post_type'      => 'item',
+                'posts_per_page' => -1,
+                'tax_query'      => [
+                    [
+                        'taxonomy' => 'item_cat', // 独自なら taxonomy 名
+                        'field'    => 'slug',
+                        'terms'    => $slug,
+                    ],
+                ],
+            ]);
 
-    if (!$items) continue;
+        if (!$items) continue;
 
-    echo '<section class="admin-group">';
-    echo '<h3>' . esc_html($groups[$slug]) . '</h3>';
-    echo '<ul>';
+            echo '<section class="admin-group">';
+            echo '<h3>' . esc_html($groups[$slug]) . '</h3>';
+            echo '<ul>';
 
     foreach ($items as $item) {
         echo '<li>';
@@ -68,41 +63,50 @@ foreach (['seitai-menu', 'sekkotsu-menu'] as $slug) {
 
     echo '</ul>';
     echo '</section>';
-}
+    }
 
-// タグなし
-$no_tag_items = get_posts([
-    'post_type'      => 'item',
-    'posts_per_page' => -1,
-    'tax_query'      => [
+    // タグなし
+    $no_tag_items = get_posts([
+        'post_type'      => 'item',
+        'posts_per_page' => -1,
+        'tax_query'      => [
         [
             'taxonomy' => 'item_cat',
             'operator' => 'NOT EXISTS',
         ],
-    ],
-]);
+        ],
+    ]);
 
-if ($no_tag_items) {
-    echo '<section class="admin-group">';
-    echo '<h3>' . esc_html($groups['none']) . '</h3>';
-    echo '<ul>';
+    if ($no_tag_items) {
+        echo '<section class="admin-group">';
+        echo '<h3>' . esc_html($groups['none']) . '</h3>';
+        echo '<ul>';
 
     foreach ($no_tag_items as $item) {
         echo '<li>';
+        echo '<div>';
         echo esc_html($item->post_title);
-
+        echo '</div>';
+        echo '<div class="item-actions">';
         echo ' <a href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
         echo ' <a href="' . get_delete_post_link($item->ID, '', true) . '"
                     onclick="return confirm(\'削除しますか？\')"
                     style="color:red;">削除</a>';
-
+        echo '</div>';
         echo '</li>';
     }
 
     echo '</ul>';
     echo '</section>';
-}
-?>
+    }
+    ?>
+
+    <div class="admin-actions">
+    <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
+            class="btn-add">
+            ＋ 新しい料金メニューを追加
+        </a>
+    </div>
 
 <!-- 追加・編集フォーム -->
 <div id="item-form" style="display:none;">

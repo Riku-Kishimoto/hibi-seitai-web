@@ -208,24 +208,24 @@ jQuery(function ($) {
     const nonce = wpApiSettings.nonce;
 
     // 一覧取得
-    function loadNews() {
-        $.get(apiRoot, { per_page: 10 })
-            .done(function (posts) {
-                let html = '';
+    // function loadNews() {
+    //     $.get(apiRoot, { per_page: 10 })
+    //         .done(function (posts) {
+    //             let html = '';
 
-                posts.forEach(post => {
-                    html += `
-                        <div class="news-item" data-id="${post.id}">
-                            <h3>${post.title.rendered}</h3>
-                            <button class="edit">編集</button>
-                            <button class="delete">削除</button>
-                        </div>
-                    `;
-                });
+    //             posts.forEach(post => {
+    //                 html += `
+    //                     <div class="news-item" data-id="${post.id}">
+    //                         <h3>${post.title.rendered}</h3>
+    //                         <button class="edit">編集</button>
+    //                         <button class="delete">削除</button>
+    //                     </div>
+    //                 `;
+    //             });
 
-                $('#news-list').html(html);
-            });
-    }
+    //             $('#news-list').html(html);
+    //         });
+    // }
 
     loadNews();
 

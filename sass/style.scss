@@ -821,6 +821,16 @@ img {
         max-width: rem(150);
         right: 0;
     }
+
+    &--edit {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        margin-top: rem(30);
+        background-color: $color-accent;
+        width: rem(200);
+    }
 }
 
 
@@ -2365,7 +2375,7 @@ img {
         margin-bottom: 16px;
         font-size: 18px;
         font-weight: 700;
-        color: #111827;
+        color: $color-accent;
         border-left: 4px solid $color-main;
         padding-left: 12px;
     }
@@ -2376,63 +2386,10 @@ img {
         padding: 0;
     }
 
-    // li {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     padding: 12px 8px;
-    //     border-bottom: 1px solid #e5e7eb;
-    //     font-size: 15px;
-
-    //     &:last-child {
-    //         border-bottom: none;
-    //     }
-
-    //     /* 左：タイトル */
-    //     .title {
-    //         color: $color-accent;
-    //         margin-right: auto; // ← これが重要
-    //     }
-
-    //     /* 右：ボタン群 */
-    //     .actions {
-    //         display: flex;
-    //         gap: 8px;
-    //     }
-
-    //     a {
-    //         font-size: 14px;
-    //         text-decoration: none;
-    //         padding: 6px 12px;
-    //         border-radius: 4px;
-    //         transition: all 0.2s ease;
-    //         white-space: nowrap;
-    //     }
-
-    //     a:first-of-type {
-    //         background: #2563eb;
-    //         color: #fff;
-
-    //         &:hover {
-    //             background: #1e40af;
-    //         }
-    //     }
-
-    //     a:last-of-type {
-    //         background: #fee2e2;
-    //         color: #991b1b;
-
-    //         &:hover {
-    //             background: #fecaca;
-    //         }
-    //     }
-    // }
-
     li {
-        display: flex;
-        // grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr auto;
         align-items: center;
-        justify-content: space-between;
         padding: 12px 8px;
         border-bottom: 1px solid #e5e7eb;
         font-size: 15px;
@@ -2449,14 +2406,14 @@ img {
 
         a {
             margin-left: 12px;
-            font-size: 14px;
+            font-size: 16px;
             text-decoration: none;
             padding: 6px 12px;
             border-radius: 4px;
             transition: all 0.2s ease;
         }
 
-        a:first-of-type {
+        .editbtn {
             background: $color-accent;
             color: #fff;
 
@@ -2465,7 +2422,7 @@ img {
             }
         }
 
-        a:last-of-type {
+        .deletebtn {
             background: #fee2e2;
             color: #991b1b;
 
@@ -2474,58 +2431,27 @@ img {
             }
         }
     }
+}
 
-    // li {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between; // ← これ
-    //     padding: 12px 8px;
-    //     border-bottom: 1px solid #e5e7eb;
-    //     font-size: 15px;
+.item-title {
+    font-weight: bold;
 
-    //     &:last-child {
-    //         border-bottom: none;
-    //     }
+    &a {
+        font-size: rem(18);
+    }
+}
 
-    //     /* 左：タイトル */
-    //     >div:first-child {
-    //         color: $color-accent;
-    //     }
+.item-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    white-space: nowrap;
 
-    //     /* 右：ボタン */
-    //     .item-actions {
-    //         display: flex;
-    //         gap: 8px;
-    //         flex-shrink: 0; // ← 崩れ防止
-    //     }
-
-    //     a {
-    //         font-size: 14px;
-    //         text-decoration: none;
-    //         padding: 6px 12px;
-    //         border-radius: 4px;
-    //         transition: all 0.2s ease;
-    //         white-space: nowrap;
-    //     }
-
-    //     a:first-of-type {
-    //         background: #2563eb;
-    //         color: #fff;
-
-    //         &:hover {
-    //             background: #1e40af;
-    //         }
-    //     }
-
-    //     a:last-of-type {
-    //         background: #fee2e2;
-    //         color: #991b1b;
-
-    //         &:hover {
-    //             background: #fecaca;
-    //         }
-    //     }
-    // }
+    &--btn {
+        display: inline-block;
+        width: 100px;
+    }
 }
 
 
@@ -2540,8 +2466,8 @@ img {
 
     .btn-add {
         display: inline-block;
-        background: #10b981;
-        color: #fff;
+        background: $color-main;
+        color: $color-accent;
         padding: 12px 20px;
         border-radius: 6px;
         font-weight: 600;
@@ -2549,7 +2475,7 @@ img {
         transition: background 0.2s ease;
 
         &:hover {
-            background: #059669;
+            background: $color-base;
         }
     }
 }

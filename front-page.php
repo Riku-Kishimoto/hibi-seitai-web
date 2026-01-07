@@ -145,6 +145,11 @@
                 wp_reset_postdata();
                 ?>
                 <a class="information__link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">お知らせ一覧ページへ</a>
+                <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
+                    <a class="btn btn--edit btn--edit--top" href="<?php echo esc_url( home_url('/edit/#edit__posts') ); ?>" class="price-edit-btn">
+                    お知らせを編集
+                    </a>
+                <?php endif; ?>
             </div>
         </section>
         <section id="calendar" class="calendar">

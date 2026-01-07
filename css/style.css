@@ -626,6 +626,15 @@ img {
   max-width: 9.375rem;
   right: 0;
 }
+.btn--edit {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 1.875rem;
+  background-color: #001F3F;
+  width: 12.5rem;
+}
 
 .footer {
   padding-top: 0;
@@ -2424,7 +2433,7 @@ img {
   margin-bottom: 16px;
   font-size: 18px;
   font-weight: 700;
-  color: #111827;
+  color: #001F3F;
   border-left: 4px solid #FFD75F;
   padding-left: 12px;
 }
@@ -2434,9 +2443,9 @@ img {
   padding: 0;
 }
 .admin-group li {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
   padding: 12px 8px;
   border-bottom: 1px solid #e5e7eb;
   font-size: 15px;
@@ -2451,25 +2460,44 @@ img {
 }
 .admin-group li a {
   margin-left: 12px;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 4px;
   transition: all 0.2s ease;
 }
-.admin-group li a:first-of-type {
+.admin-group li .editbtn {
   background: #001F3F;
   color: #fff;
 }
-.admin-group li a:first-of-type:hover {
+.admin-group li .editbtn:hover {
   background: #1e40af;
 }
-.admin-group li a:last-of-type {
+.admin-group li .deletebtn {
   background: #fee2e2;
   color: #991b1b;
 }
-.admin-group li a:last-of-type:hover {
+.admin-group li .deletebtn:hover {
   background: #fecaca;
+}
+
+.item-title {
+  font-weight: bold;
+}
+.item-titlea {
+  font-size: 1.125rem;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+  white-space: nowrap;
+}
+.item-actions--btn {
+  display: inline-block;
+  width: 100px;
 }
 
 /* ===========================
@@ -2482,8 +2510,8 @@ img {
 }
 .admin-actions .btn-add {
   display: inline-block;
-  background: #10b981;
-  color: #fff;
+  background: #FFD75F;
+  color: #001F3F;
   padding: 12px 20px;
   border-radius: 6px;
   font-weight: 600;
@@ -2491,7 +2519,7 @@ img {
   transition: background 0.2s ease;
 }
 .admin-actions .btn-add:hover {
-  background: #059669;
+  background: #FEF6D7;
 }
 
 /* ===========================

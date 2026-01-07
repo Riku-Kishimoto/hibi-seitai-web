@@ -116,39 +116,6 @@ function my_custom_post_type_settings() {
         )
     );
 
-//     register_post_type('item', array(
-//     'label' => '料金表',
-//     'public' => true,
-//     'menu_position' => 5,
-//     'menu_icon' => 'dashicons-list-view',
-
-//     'supports' => array(
-//         'title',        // メニュー名
-//         'editor',       // 料金・説明（必須）
-//         'thumbnail',    // 画像
-//         'page-attributes', // 並び順
-//     ),
-
-//     'template' => array(
-//         array(
-//             'core/paragraph',
-//             array(
-//                 'content' => '【施術内容】ここに施術内容を入力してください。',
-//             ),
-//         ),
-//         array(
-//             'core/paragraph',
-//             array(
-//                 'content' => '【料金】例：3,000円',
-//             ),
-//         ),
-//     ),
-
-//     'template_lock' => 'all',
-
-//     'show_in_rest' => true,
-// ));
-
     // ----------------------------------------------------------------
     // 2. カスタムタクソノミー「商品カテゴリー (item_cat)」の登録
     // ----------------------------------------------------------------
@@ -168,47 +135,6 @@ function my_custom_post_type_settings() {
 }
 add_action( 'init', 'my_custom_post_type_settings' );
 
-// add_action( 'init', function() {
-//     register_block_type(
-//         // block.json ファイルの絶対パスを渡す
-//         get_template_directory() . '/blocks/fee-row/block.json'
-//     );
-// } );
-
-// function my_item_sortable() {
-//     add_post_type_support( 'item', 'page-attributes' );
-// }
-// add_action( 'init', 'my_item_sortable' );
-
-
-/**
- * SCFを利用してフロントエンドからのカスタム投稿データ更新を処理
- */
-// function handle_scf_frontend_update() {
-//     // フォーム送信がされていない、または必須フィールドがない場合は処理しない
-//     if ( ! isset( $_POST['scf_post_update'] ) || ! isset( $_POST['post_id'] ) ) {
-//         return;
-//     }
-
-//     $post_id = intval( $_POST['post_id'] );
-
-//     // 1. ログインチェックと権限チェック（必須）
-//     // ユーザーがログインしているか、その投稿を編集する権限があるかを確認
-//     if ( ! is_user_logged_in() || ! current_user_can( 'edit_post', $post_id ) ) {
-//         // 権限がない場合は処理を終了
-//         return;
-//     }
-
-//     // 2. SCFのコア関数を呼び出し、POSTデータをカスタムフィールドに保存
-//     // SCFのNonce（セキュリティトークン）の検証も同時に行われます
-//     SCF::post_meta_request();
-
-//     // 3. データ保存後、二重送信を防ぐためにリダイレクト
-//     wp_safe_redirect( get_permalink( $post_id ) );
-//     exit;
-// }
-// add_action( 'init', 'handle_scf_frontend_update' );
-
 //item をブロックエディタ専用にする
 add_filter(
     'use_block_editor_for_post_type',
@@ -222,30 +148,8 @@ add_filter(
     2
 );
 
-// //編集画面にフロントCSSを読み込む
-// add_action('enqueue_block_editor_assets', function () {
-//     wp_enqueue_style(
-//         'editor-front-style',
-//         get_template_directory_uri() . '/css/style.min.css',
-//         array(),
-//         filemtime(get_template_directory() . '/css/style.min.css')
-//     );
-// });
 
-// // item 編集画面用CSSを読み込む
-// add_action('admin_enqueue_scripts', function ($hook) {
-
-//     if ($hook !== 'post.php' && $hook !== 'post-new.php') {
-//         return;
-//     }
-
-//     $screen = get_current_screen();
-//     if ($screen && $screen->post_type === 'item') {
-//         wp_enqueue_style(
-//             'editor-item-style',
-//             get_template_directory_uri() . '/css/editor-item.css',
-//             array(),
-//             filemtime(get_template_directory() . '/css/editor-item.css')
-//         );
-//     }
-// });
+function my_login_redirect( $redirect_to, $request, $user ) {
+    return home_url();
+}
+add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );

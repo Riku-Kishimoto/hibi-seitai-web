@@ -16,16 +16,11 @@ get_header("edit");
 ?>
 
 <main>
-    <!-- <div id="item-list">
-        <h2>料金表一覧</h2>
-        <p>読み込み中...</p>
-    </div> -->
-
     <?php
         $groups = [
-            'seitai-menu'   => '整体の料金',
-            'sekkotsu-menu' => '接骨院の料金',
-            'none'     => 'その他の料金',
+            'seitai-menu'   => '日比整体の料金表',
+            'sekkotsu-menu' => 'だいせんじ接骨院の料金表',
+            'none'     => 'その他の料金表',
         ];
 
     // タグ付き
@@ -36,7 +31,7 @@ get_header("edit");
                 'posts_per_page' => -1,
                 'tax_query'      => [
                     [
-                        'taxonomy' => 'item_cat', // 独自なら taxonomy 名
+                        'taxonomy' => 'item_cat',
                         'field'    => 'slug',
                         'terms'    => $slug,
                     ],
@@ -51,13 +46,16 @@ get_header("edit");
 
     foreach ($items as $item) {
         echo '<li>';
+        echo '<div class="item-title">';
+        echo '<a id="edit__fee" href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">';
         echo esc_html($item->post_title);
-
-        echo ' <a href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
-        echo ' <a href="' . get_delete_post_link($item->ID, '', true) . '"
-                    onclick="return confirm(\'削除しますか？\')"
-                    style="color:red;">削除</a>';
-
+        echo '</a>';
+        echo '</div>';
+        echo '<div class="item-actions">';
+        echo ' <a class="editbtn" href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
+        echo ' <a class="deletebtn" href="' . get_delete_post_link($item->ID, '', true) . '"
+                    onclick="return confirm(\'本当に削除（ゴミ箱へ移動）しますか？\')">削除</a>';
+        echo '</div>';
         echo '</li>';
     }
 
@@ -80,18 +78,21 @@ get_header("edit");
     if ($no_tag_items) {
         echo '<section class="admin-group">';
         echo '<h3>' . esc_html($groups['none']) . '</h3>';
+        echo '<p>＊こちらの料金表はサイトに表示されていません。<br>
+        サイトに表示させる場合は、編集から整体・接骨院どちらかのカテゴリーを選択してください。</p>';
         echo '<ul>';
 
     foreach ($no_tag_items as $item) {
         echo '<li>';
-        echo '<div>';
+        echo '<div class="item-title">';
+        echo '<a class="titlebtn" href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">';
         echo esc_html($item->post_title);
+        echo '</a>';
         echo '</div>';
         echo '<div class="item-actions">';
-        echo ' <a href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
-        echo ' <a href="' . get_delete_post_link($item->ID, '', true) . '"
-                    onclick="return confirm(\'削除しますか？\')"
-                    style="color:red;">削除</a>';
+        echo ' <a class="editbtn" href="' . admin_url("post.php?post={$item->ID}&action=edit") . '">編集</a>';
+        echo ' <a class="deletebtn" href="' . get_delete_post_link($item->ID, '', true) . '"
+                    onclick="return confirm(\'本当に削除（ゴミ箱へ移動）しますか？\')">削除</a>';
         echo '</div>';
         echo '</li>';
     }
@@ -104,62 +105,54 @@ get_header("edit");
     <div class="admin-actions">
     <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
             class="btn-add">
-            ＋ 新しい料金メニューを追加
+            ＋ 新しい料金表を追加
         </a>
     </div>
 
-<!-- 追加・編集フォーム -->
-<div id="item-form" style="display:none;">
-    <input type="hidden" id="item-id">
+    <section class="admin-news admin-group">
+    <h3 id="edit__posts">お知らせ管理</h3>
 
-    <label>
-        メニュー名
-        <input type="text" id="item-title">
-    </label>
+    <ul id="news-list">
+        <?php
+        $news_posts = get_posts([
+            'post_type'      => 'post', // 通常の投稿の場合
+            'posts_per_page' => 10,
+        ]);
 
-    <label>
-        説明
-        <textarea id="item-content"></textarea>
-    </label>
+        if ($news_posts) :
+            foreach ($news_posts as $post) : ?>
+                <li>
+                    <div class="item-title">
+                        <a href="<?php echo admin_url("post.php?post={$post->ID}&action=edit"); ?>">
+                        <?php echo esc_html($post->post_title); ?>
+                        <span style="font-size: 14px; color: #666; margin-left: 10px;">
+                            (<?php echo get_the_date('Y/m/d', $post->ID); ?>)
+                        </span>
+                        </a>
+                    </div>
+                    <div class="item-actions">
+                        <a class="editbtn" href="<?php echo admin_url("post.php?post={$post->ID}&action=edit"); ?>" class="btn-edit">
+                            編集
+                        </a>
+                        <a class="deletebtn" href="<?php echo get_delete_post_link($post->ID); ?>"
+                            class="btn-delete"
+                            onclick="return confirm('本当に削除（ゴミ箱へ移動）しますか？')">
+                            削除
+                        </a>
+                    </div>
+                </li>
+            <?php endforeach;
+        else : ?>
+            <p>お知らせはありません。</p>
+        <?php endif; ?>
+    </ul>
 
-    <label>
-        価格
-        <input type="text" id="item-price">
-    </label>
-
-    <div class="form-buttons">
-        <button id="save-item">保存</button>
-        <button id="cancel-item">キャンセル</button>
-    </div>
-</div>
-
-    <section class="admin-news">
-    <h2>お知らせ管理</h2>
-
-    <button id="add-news">＋ 新しいお知らせ</button>
-
-    <div id="news-list">
-        <p>読み込み中...</p>
+    <div class="admin-actions" style="margin-bottom: 20px;">
+        <a href="<?php echo admin_url('post-new.php'); ?>" class="btn-add">
+            ＋ 新しいお知らせを追加
+        </a>
     </div>
 </section>
-
-<!-- 新規・編集フォーム -->
-<div id="news-form" style="display:none;">
-    <input type="hidden" id="news-id">
-
-    <label>
-        タイトル
-        <input type="text" id="news-title">
-    </label>
-
-    <label>
-        内容
-        <textarea id="news-content"></textarea>
-    </label>
-
-    <button id="save-news">保存</button>
-    <button id="cancel-news">キャンセル</button>
-</div>
 
 </main>
 

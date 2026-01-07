@@ -139,6 +139,11 @@
                     ?>
 
                 </div>
+                <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
+                    <a class="btn btn--edit" href="<?php echo esc_url( home_url('/edit/') ); ?>" class="price-edit-btn">
+                    料金表を編集
+                    </a>
+                <?php endif; ?>
             </div>
         </section>
 

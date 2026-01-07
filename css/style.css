@@ -1453,7 +1453,7 @@ img {
 }
 
 .about {
-  margin-bottom: 12.5rem;
+  margin-bottom: 3.125rem;
 }
 .about__inner {
   max-width: 880px;
@@ -1517,9 +1517,14 @@ img {
     display: block;
   }
 }
+@media (width >= 1024px) {
+  .about {
+    margin-bottom: 12.5rem;
+  }
+}
 
 .information {
-  margin-bottom: 12.5rem;
+  margin-bottom: 3.125rem;
 }
 .information__inner {
   max-width: 880px;
@@ -1595,9 +1600,14 @@ img {
 .information__link:hover {
   background-color: #FFD75F;
 }
+@media (width >= 1024px) {
+  .information {
+    margin-bottom: 12.5rem;
+  }
+}
 
 .access {
-  margin-bottom: 15.625rem;
+  margin-bottom: 3.125rem;
 }
 .access__inner {
   max-width: 880px;
@@ -1689,6 +1699,12 @@ img {
     height: 26.5rem;
   }
 }
+@media (width >= 1024px) {
+  .access {
+    margin-bottom: 12.5rem;
+  }
+}
+
 .calendar {
   margin-bottom: 3.125rem;
 }
@@ -2425,7 +2441,7 @@ img {
 =========================== */
 .admin-group {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 24px;
   border-radius: 8px;
 }
@@ -2446,7 +2462,7 @@ img {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 12px 8px;
+  padding: 20px 8px;
   border-bottom: 1px solid #e5e7eb;
   font-size: 15px;
   /* タイトル */
@@ -2471,7 +2487,7 @@ img {
   color: #fff;
 }
 .admin-group li .editbtn:hover {
-  background: #1e40af;
+  opacity: 0.5;
 }
 .admin-group li .deletebtn {
   background: #fee2e2;
@@ -2527,5 +2543,11 @@ img {
 =========================== */
 body.page-template-料金表一覧編集用 {
   background: #f9fafb;
+}
+
+.admin-footer__text {
+  margin: 0;
+  margin-bottom: 3.125rem;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

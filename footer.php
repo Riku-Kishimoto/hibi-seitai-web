@@ -80,7 +80,7 @@
 
         </div>
         <div class="footer__copy">
-            <p>Copyright © 2025 日比整体 だいせんじ接骨院 All Rights Reserved.</p>
+            <p>Copyright © 2026 日比整体 だいせんじ接骨院 All Rights Reserved.</p>
         </div>
     </footer>
 

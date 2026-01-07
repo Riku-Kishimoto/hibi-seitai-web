@@ -16,6 +16,8 @@ get_header("edit");
 ?>
 
 <main>
+
+<section class="admin-group">
     <?php
         $groups = [
             'seitai-menu'   => '日比整体の料金表',
@@ -103,11 +105,13 @@ get_header("edit");
     ?>
 
     <div class="admin-actions">
-    <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
+        <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
             class="btn-add">
             ＋ 新しい料金表を追加
         </a>
     </div>
+
+    </section>
 
     <section class="admin-news admin-group">
     <h3 id="edit__posts">お知らせ管理</h3>

@@ -39,8 +39,8 @@
         <nav class="gnav">
             <div class="gnav__inner">
                 <ul class="gnav__list">
-                    <li class="gnav__item"><a href="<?php echo esc_url( home_url('/edit/#edit__fee') ); ?>">日比整体料金表編集</a></li>
-                    <li class="gnav__item"><a href="<?php echo esc_url( home_url('/edit/#edit__fee') ); ?>">だいせんじ接骨院料金表編集</a></li>
+                    <li class="gnav__item"><a href="<?php echo esc_url( home_url('/edit/#edit__fee') ); ?>">料金表編集</a></li>
+                    <!-- <li class="gnav__item"><a href="<?php echo esc_url( home_url('/edit/#edit__fee') ); ?>">だいせんじ接骨院料金表編集</a></li> -->
                     <li class="gnav__item"><a href="<?php echo esc_url( home_url('/edit/#edit__posts') ); ?>">お知らせ追加・編集</a></li>
                     <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>">サイトへ戻る</a></li>
                 </ul>

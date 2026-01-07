@@ -140,7 +140,7 @@
                             </div>
                             <?php endif; ?>
 
-                            <div class="fee__list">
+                            <div>
                                 <?php
                                 echo apply_filters('the_content', get_the_content());
                                 ?>

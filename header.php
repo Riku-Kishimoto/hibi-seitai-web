@@ -70,22 +70,6 @@
             </div>
         </div>
 
-        <!-- <div id="loading" class="loading">
-            <div class="loading__list">
-                <svg class="wave" width="160" height="30" viewBox="0 0 160 30">
-                    <path
-                        d="M0 15
-                            C20 5, 40 25, 60 15
-                            C80 5, 100 25, 120 15
-                            C140 5, 160 25, 180 15"
-                        fill="none"
-                        stroke-width="2"
-                    />
-                </svg>
-                <p class="loading__text">読み込み中…</p>
-            </div>
-        </div> -->
-
         <nav class="gnav">
             <div class="gnav__inner">
                 <ul class="gnav__list">

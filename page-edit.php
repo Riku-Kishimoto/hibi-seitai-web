@@ -15,7 +15,7 @@ get_header("edit");
 
 ?>
 
-<main>
+<main class="main--edit">
 
 <section class="admin-group">
     <?php
@@ -62,6 +62,16 @@ get_header("edit");
     }
 
     echo '</ul>';
+    echo '<div class="admin-actions">';
+    echo '<a href="' . admin_url('post-new.php?post_type=item') . '" class="btn-add">';
+    echo '＋ 新しい料金表を追加';
+    echo '</a>';
+    echo '</div>';
+    if ($slug === 'seitai-menu') {
+    echo '<a class="btn btn--edit" href="' . home_url('/seitai-menu/#fee') . '">整体料金表へ戻る</a>';
+    } elseif ($slug === 'sekkotsu-menu') {
+    echo '<a class="btn btn--edit" href="' . home_url('/sekkotsu-menu/#fee') . '">接骨院料金表へ戻る</a>';
+    }
     echo '</section>';
     }
 
@@ -156,6 +166,9 @@ get_header("edit");
             ＋ 新しいお知らせを追加
         </a>
     </div>
+
+    <a class="btn btn--edit" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">お知らせ一覧へ</a>
+
 </section>
 
 </main>

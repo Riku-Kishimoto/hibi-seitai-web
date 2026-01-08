@@ -376,6 +376,20 @@ img {
     position: relative;
   }
 }
+.header--edit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1.25rem;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+}
+@media (width >= 1024px) {
+  .header--edit {
+    position: fixed;
+  }
+}
 
 .gnav {
   display: none;
@@ -957,7 +971,7 @@ img {
   }
 }
 .mainvisual__img--sekkotu {
-  background: url(../images/mainvisual-sekkotu-mobile.webp) no-repeat center center/cover;
+  background: url(../images/mainvisual-sekkotu-mobile2.webp) no-repeat center center/cover;
 }
 @media (width >= 1024px) {
   .mainvisual__img--sekkotu {
@@ -2439,6 +2453,10 @@ img {
 /* ===========================
    管理画面 共通
 =========================== */
+.main--edit {
+  margin-top: 3.125rem;
+}
+
 .admin-group {
   max-width: 900px;
   margin: 20px auto;
@@ -2490,8 +2508,8 @@ img {
   opacity: 0.5;
 }
 .admin-group li .deletebtn {
-  background: #fee2e2;
   color: #991b1b;
+  border: #991b1b solid 1px;
 }
 .admin-group li .deletebtn:hover {
   background: #fecaca;
@@ -2536,6 +2554,12 @@ img {
 }
 .admin-actions .btn-add:hover {
   background: #FEF6D7;
+}
+
+.edit-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
 }
 
 /* ===========================

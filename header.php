@@ -112,7 +112,7 @@
                         <li class="gnav__item"><a href="<?php echo home_url('/seitai/'); ?>">日比整体</a></li>
                         <li class="gnav__item"><a href="<?php echo home_url('/sekkotsu/'); ?>">だいせんじ接骨院</a></li>
                         <li class="gnav__item dropdown dropdowntext"><a href="#"><span class="nav-default">メニュー・料金</span>
-        <span class="nav-hover">下記から選択</span></a>
+                            <span class="nav-hover">下記から選択</span></a>
                             <ul class="dropdown__menu dropdown__menu--big dropdown__menu--navigation">
                                 <li class="gnav__item--nonhov"><a href="<?php echo home_url('/seitai-menu/'); ?>">整体&nbsp;メニュー・料金</a></li>
                                 <li class="gnav__item--nonhov"><a href="<?php echo home_url('/sekkotsu-menu/'); ?>">接骨院&nbsp;メニュー・料金</a></li>

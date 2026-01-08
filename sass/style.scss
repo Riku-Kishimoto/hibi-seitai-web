@@ -536,6 +536,20 @@ img {
     @include mq(desktop) {
         position: relative;
     }
+
+    &--edit {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: rem(20);
+        width: 100%;
+        z-index: 1000;
+        background-color: #fff;
+
+        @include mq(desktop) {
+            position: fixed;
+        }
+    }
 }
 
 .gnav {
@@ -1185,7 +1199,7 @@ img {
         }
 
         &--sekkotu {
-            background: url(../images/mainvisual-sekkotu-mobile.webp) no-repeat center center / cover;
+            background: url(../images/mainvisual-sekkotu-mobile2.webp) no-repeat center center / cover;
 
             @include mq() {
                 background: url(../images/mainvisual_sekkotu.webp) no-repeat center center / cover;
@@ -2375,6 +2389,10 @@ img {
    管理画面 共通
 =========================== */
 
+.main--edit {
+    margin-top: rem(50);
+}
+
 .admin-group {
     max-width: 900px;
     margin: 20px auto;
@@ -2433,8 +2451,9 @@ img {
         }
 
         .deletebtn {
-            background: #fee2e2;
+            //background: #fee2e2;
             color: #991b1b;
+            border: #991b1b solid 1px;
 
             &:hover {
                 background: #fecaca;
@@ -2488,6 +2507,12 @@ img {
             background: $color-base;
         }
     }
+}
+
+.edit-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
 }
 
 /* ===========================

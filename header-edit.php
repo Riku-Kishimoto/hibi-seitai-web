@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header header--edit">
         <div class="header__inner">
                 <h1 class="header__title"><a href="<?php echo esc_url( home_url('/edit/') ); ?>">日比整体&nbsp;だいせんじ接骨院&nbsp;管理者専用ページ</a></h1>
         <nav class="gnav">

@@ -22,11 +22,19 @@
                                 <span class="infomation__date"><?php echo get_the_date('Y.m.d'); ?></span>
                                 <span class="infomation__title"><?php the_title(); ?></span>
                             </a>
+                            <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
+                                <a class="editbtn" href="<?php echo get_edit_post_link(); ?>">編集</a>
+                            <?php endif; ?>
                         </li>
 
                     <?php endwhile; ?>
 
                 </ul>
+
+                <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
+                <!-- 記事追加ボタン -->
+                <a class="btn--add" href="<?php echo admin_url('post-new.php'); ?>">＋ 新しい記事を追加</a>
+                <?php endif; ?>
                 <?php else : ?>
                     <p>まだ記事が投稿されていません。</p>
                 <?php endif; ?>
@@ -81,6 +89,12 @@
                 ?>
                 </div>
             </div>
+
+            <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
+                    <a class="btn btn--edit btn--edit--top" href="<?php echo esc_url( home_url('/edit/#edit__posts') ); ?>" class="price-edit-btn">
+                    お知らせを編集
+                    </a>
+                <?php endif; ?>
         </section>
     </main>
 

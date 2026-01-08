@@ -477,6 +477,7 @@ img {
     }
 
     &__first {
+        margin-top: rem(20);
         padding: rem(20) 0;
         font-family: $font-family-gothic;
         display: grid;

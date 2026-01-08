@@ -317,6 +317,7 @@ img {
   margin-right: auto;
 }
 .header__first {
+  margin-top: 1.25rem;
   padding: 1.25rem 0;
   font-family: "Zen Maru Gothic", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
   display: grid;

@@ -121,9 +121,9 @@ get_header("edit");
         </a>
     </div>
 
-    </section>
+</section>
 
-    <section class="admin-news admin-group">
+<section class="admin-news admin-group">
     <h3 id="edit__posts">お知らせ管理</h3>
 
     <ul id="news-list">
@@ -169,6 +169,97 @@ get_header("edit");
 
     <a class="btn btn--edit" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">お知らせ一覧へ</a>
 
+</section>
+
+
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+$scf_saved = false;
+$target_post_id = 33;
+$group_name = 'about';
+
+$fields = [
+    'about-access'  => 'アクセス',
+    'about-address'    => '住所',
+    'about-parking' => '駐車場',
+    'about-tel'     => '電話番号',
+    'about-hours'    => '平日営業時間',
+    'about-hours-holiday'    => '土日営業時間',
+    'about-test'    => 'テスト',
+];
+
+// 保存処理
+if (isset($_POST['scf_save']) && check_admin_referer('scf_edit_action', 'scf_edit_nonce')) {
+    if (current_user_can('edit_post', $target_post_id)) {
+
+        $save_data = [];
+        foreach ($fields as $key => $label) {
+            $save_data[$key] = sanitize_textarea_field($_POST[$key] ?? '');
+        }
+
+        // グループデータとして保存（既存のデータ構造に合わせる）
+        update_post_meta($target_post_id, $group_name, [$save_data]);
+
+        // 個別フィールドとしても保存（SCFの仕様に合わせる）
+        foreach ($save_data as $key => $value) {
+            update_post_meta($target_post_id, $key, $value);
+        }
+
+        $scf_saved = true;
+    }
+}
+
+// データ取得: get_post_meta() を使用
+$group_data = get_post_meta($target_post_id, $group_name, true);
+
+// データ構造を解析
+$current_values = [];
+if (is_array($group_data) && isset($group_data[0]) && is_array($group_data[0])) {
+    $current_values = $group_data[0];
+} else {
+    // フォールバック: 個別メタキーから取得
+    foreach ($fields as $key => $label) {
+        $value = get_post_meta($target_post_id, $key, true);
+        if ($value !== '') {
+            $current_values[$key] = $value;
+        }
+    }
+}
+?>
+
+<section class="admin-group admin-basic">
+    <h3>基本情報</h3>
+
+    <?php if ($scf_saved): ?>
+        <p class="admin-notice admin-notice--success">保存しました</p>
+    <?php endif; ?>
+
+    <form method="post">
+        <?php wp_nonce_field('scf_edit_action', 'scf_edit_nonce'); ?>
+
+        <ul class="basic-list">
+            <?php foreach ($fields as $key => $label): ?>
+                <li>
+                    <div class="item-title">
+                        <?php echo esc_html($label); ?>
+                    </div>
+
+                    <div class="item-actions">
+                        <textarea
+                            name="<?php echo esc_attr($key); ?>"
+                            rows="2"
+                        ><?php echo esc_textarea($current_values[$key] ?? ''); ?></textarea>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+
+        <div class="admin-actions" style="margin-top:10px;">
+            <button type="submit" name="scf_save" class="btn-add">保存</button>
+        </div>
+    </form>
 </section>
 
 </main>

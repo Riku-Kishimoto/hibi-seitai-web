@@ -1,0 +1,29 @@
+/* ================================
+   カスタム投稿タイプ（news）
+   編集画面用スタイル
+================================ */
+
+/* 戻るボタン */
+.custom-admin-back {
+    margin: 16px 0;
+}
+
+.custom-admin-back a {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #001f3f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* エディタ全体を少し見やすく */
+.editor-styles-wrapper {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* 見出しの視認性アップ */
+.editor-styles-wrapper h2 {
+    color: #001f3f;
+}

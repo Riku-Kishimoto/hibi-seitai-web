@@ -29,7 +29,7 @@
                     'next_text' => '<span class="nav-next-text">次の記事</span><span class="nav-next-icon"></span>',
                 ) );
                 ?>
-
+                <a class="information__link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">お知らせ一覧ページへ</a>
             </div>
         </section>
 

@@ -813,6 +813,7 @@ img {
         padding: rem(10);
         background-color: $color-accent;
         border-radius: 0;
+        //color: $color-accent;
 
         @include mq() {
             font-size: rem(18);
@@ -842,7 +843,6 @@ img {
         margin-right: auto;
         margin-left: auto;
         text-align: center;
-        margin-top: rem(30);
         background-color: $color-accent;
         width: rem(200);
     }
@@ -852,7 +852,6 @@ img {
 
 .footer {
     padding-top: 0;
-    background-color: $color-sub;
     background-color: $color-main;
     color: $color-accent;
 
@@ -940,7 +939,7 @@ img {
 
 
     &__sns {
-        margin-bottom: rem(80);
+        margin-bottom: rem(20);
         padding-top: rem(10);
         margin-top: 16px;
         display: flex;
@@ -1803,6 +1802,7 @@ img {
 
     &__link {
         margin-top: rem(30);
+        margin-bottom: rem(30);
         max-width: rem(250);
         display: block;
         margin-right: auto;
@@ -2264,11 +2264,15 @@ img {
     }
 
     &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         &:not(:last-child) {
             border-bottom: 1px dotted $color-accent;
         }
 
-        a {
+        .infomation__first {
             display: grid;
             padding-left: rem(40);
             padding-bottom: rem(40);
@@ -2290,6 +2294,44 @@ img {
         font-size: rem(18);
         font-weight: 600;
         line-height: 1.6;
+    }
+
+    &__editbtn {
+
+        margin-left: rem(12);
+        font-size: rem(16);
+        text-decoration: none;
+        padding: rem(6) rem(12) rem(6) rem(12);
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        background: $color-accent;
+        color: #fff;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__add {
+        display: inline-block;
+        background: $color-main;
+        color: $color-accent;
+        margin-left: auto;
+        padding: rem(12) rem(20);
+        border-radius: rem(6);
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: $color-base;
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: rem(20);
     }
 }
 
@@ -2395,18 +2437,18 @@ img {
 }
 
 .admin-group {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 24px;
+    max-width: rem(900);
+    margin: rem(20) auto;
+    padding: rem(24);
     border-radius: 8px;
 
     h3 {
-        margin-bottom: 16px;
-        font-size: 18px;
+        margin-bottom: rem(16);
+        font-size: rem(18);
         font-weight: 700;
         color: $color-accent;
         border-left: 4px solid $color-main;
-        padding-left: 12px;
+        padding-left: rem(12);
     }
 
     ul {
@@ -2419,9 +2461,9 @@ img {
         display: grid;
         grid-template-columns: 1fr auto;
         align-items: center;
-        padding: 20px 8px;
+        padding: rem(20) rem(8);
         border-bottom: 1px solid #e5e7eb;
-        font-size: 15px;
+        font-size: rem(15);
 
         &:last-child {
             border-bottom: none;
@@ -2430,14 +2472,14 @@ img {
         /* タイトル */
         &::before {
             color: $color-accent;
-            margin-right: 8px;
+            margin-right: rem(8);
         }
 
         a {
-            margin-left: 12px;
-            font-size: 16px;
+            margin-left: rem(12);
+            font-size: rem(16);
             text-decoration: none;
-            padding: 6px 12px;
+            padding: rem(6) rem(12);
             border-radius: 4px;
             transition: all 0.2s ease;
         }
@@ -2473,33 +2515,46 @@ img {
 
 .item-actions {
     display: flex;
-    gap: 8px;
+    gap: rem(8);
     justify-content: flex-end;
+    align-self: flex-start;
     align-items: center;
     white-space: nowrap;
 
     &--btn {
         display: inline-block;
-        width: 100px;
+        width: rem(100);
     }
 }
 
+.basic-item {
+    align-items: center;
+}
+
+.textarea {
+    height: rem(25.5);
+}
+
+.admin-footer__text {
+    margin-bottom: rem(30);
+    text-align: center;
+}
 
 /* ===========================
    追加ボタン
 =========================== */
 
 .admin-actions {
-    max-width: 900px;
-    margin: 20px auto 60px;
+    max-width: rem(900);
+    margin: rem(20) auto rem(60);
     text-align: right;
 
     .btn-add {
         display: inline-block;
         background: $color-main;
         color: $color-accent;
-        padding: 12px 20px;
-        border-radius: 6px;
+        padding: rem(12) rem(20);
+        border-radius: rem(6);
         font-weight: 600;
         text-decoration: none;
         transition: background 0.2s ease;
@@ -2514,18 +2569,4 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
-}
-
-/* ===========================
-   管理画面全体背景（任意）
-=========================== */
-
-body.page-template-料金表一覧編集用 {
-    background: #f9fafb;
-}
-
-.admin-footer__text {
-    margin: 0;
-    margin-bottom: rem(50);
-    text-align: center;
 }

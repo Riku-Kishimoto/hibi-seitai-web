@@ -18,12 +18,12 @@
                     <?php while ( have_posts() ) : the_post(); ?>
 
                         <li class="infomation__list">
-                            <a href="<?php the_permalink(); ?>">
+                            <a class="infomation__first" href="<?php the_permalink(); ?>">
                                 <span class="infomation__date"><?php echo get_the_date('Y.m.d'); ?></span>
                                 <span class="infomation__title"><?php the_title(); ?></span>
                             </a>
                             <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
-                                <a class="editbtn" href="<?php echo get_edit_post_link(); ?>">編集</a>
+                                <a class="infomation__editbtn" href="<?php echo get_edit_post_link(); ?>">編集</a>
                             <?php endif; ?>
                         </li>
 
@@ -32,8 +32,9 @@
                 </ul>
 
                 <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
-                <!-- 記事追加ボタン -->
-                <a class="btn--add" href="<?php echo admin_url('post-new.php'); ?>">＋ 新しい記事を追加</a>
+                    <div class="infomation__head">
+                        <a class="infomation__add" href="<?php echo admin_url('post-new.php'); ?>">＋ 新しい記事を追加</a>
+                    </div>
                 <?php endif; ?>
                 <?php else : ?>
                     <p>まだ記事が投稿されていません。</p>
@@ -88,13 +89,12 @@
                 echo '</div>';
                 ?>
                 </div>
-            </div>
-
-            <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
+                <?php if ( is_user_logged_in() && current_user_can('edit_posts') ) : ?>
                     <a class="btn btn--edit btn--edit--top" href="<?php echo esc_url( home_url('/edit/#edit__posts') ); ?>" class="price-edit-btn">
                     お知らせを編集
                     </a>
                 <?php endif; ?>
+            </div>
         </section>
     </main>
 

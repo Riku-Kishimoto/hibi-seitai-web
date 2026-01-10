@@ -129,7 +129,7 @@ get_header("edit");
     <ul id="news-list">
         <?php
         $news_posts = get_posts([
-            'post_type'      => 'post', // 通常の投稿の場合
+            'post_type'      => 'post',
             'posts_per_page' => 10,
         ]);
 
@@ -187,10 +187,8 @@ $fields = [
     'about-tel'     => '電話番号',
     'about-hours'    => '平日営業時間',
     'about-hours-holiday'    => '土日営業時間',
-    'about-test'    => 'テスト',
 ];
 
-// 保存処理
 if (isset($_POST['scf_save']) && check_admin_referer('scf_edit_action', 'scf_edit_nonce')) {
     if (current_user_can('edit_post', $target_post_id)) {
 
@@ -199,27 +197,25 @@ if (isset($_POST['scf_save']) && check_admin_referer('scf_edit_action', 'scf_edi
             $save_data[$key] = sanitize_textarea_field($_POST[$key] ?? '');
         }
 
-        // グループデータとして保存（既存のデータ構造に合わせる）
         update_post_meta($target_post_id, $group_name, [$save_data]);
 
-        // 個別フィールドとしても保存（SCFの仕様に合わせる）
         foreach ($save_data as $key => $value) {
             update_post_meta($target_post_id, $key, $value);
         }
 
         $scf_saved = true;
+
+        wp_redirect(add_query_arg('saved', '1', get_permalink()));
+        exit;
     }
 }
 
-// データ取得: get_post_meta() を使用
 $group_data = get_post_meta($target_post_id, $group_name, true);
 
-// データ構造を解析
 $current_values = [];
 if (is_array($group_data) && isset($group_data[0]) && is_array($group_data[0])) {
     $current_values = $group_data[0];
 } else {
-    // フォールバック: 個別メタキーから取得
     foreach ($fields as $key => $label) {
         $value = get_post_meta($target_post_id, $key, true);
         if ($value !== '') {
@@ -233,7 +229,7 @@ if (is_array($group_data) && isset($group_data[0]) && is_array($group_data[0])) 
     <h3>基本情報</h3>
 
     <?php if ($scf_saved): ?>
-        <p class="admin-notice admin-notice--success">保存しました</p>
+        <!-- <p class="admin-notice admin-notice--success">保存しました</p> -->
     <?php endif; ?>
 
     <form method="post">
@@ -241,7 +237,7 @@ if (is_array($group_data) && isset($group_data[0]) && is_array($group_data[0])) 
 
         <ul class="basic-list">
             <?php foreach ($fields as $key => $label): ?>
-                <li>
+                <li class="basic-item">
                     <div class="item-title">
                         <?php echo esc_html($label); ?>
                     </div>
@@ -250,6 +246,9 @@ if (is_array($group_data) && isset($group_data[0]) && is_array($group_data[0])) 
                         <textarea
                             name="<?php echo esc_attr($key); ?>"
                             rows="2"
+                            class="textarea"
+                            style="width:350px;
+                            text-align:right"
                         ><?php echo esc_textarea($current_values[$key] ?? ''); ?></textarea>
                     </div>
                 </li>

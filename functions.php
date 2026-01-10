@@ -153,3 +153,41 @@ function my_login_redirect( $redirect_to, $request, $user ) {
     return home_url();
 }
 add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
+
+add_filter('rest_authentication_errors', function ($result) {
+
+    if (!empty($result)) {
+        return $result;
+    }
+
+    if (is_user_logged_in()) {
+        return $result;
+    }
+
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    $blocked_routes = [
+        '/wp/v2/users',
+        '/wp/v2/posts',
+        '/wp/v2/types',
+        '/wp/v2/statuses',
+        '/wp/v2/taxonomies',
+        '/wp/v2/pages',
+        '/wp/v2/media',
+        '/wp/v2/comments',
+        '/wp/v2/categories',
+        '/wp/v2/tags',
+    ];
+
+    foreach ($blocked_routes as $route) {
+        if (strpos($request_uri, $route) !== false) {
+            return new WP_Error(
+                'rest_not_found',
+                'Not Found',
+                ['status' => 404]
+            );
+        }
+    }
+
+    return $result;
+});

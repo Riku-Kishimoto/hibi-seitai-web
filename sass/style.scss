@@ -477,7 +477,7 @@ img {
     }
 
     &__first {
-        margin-top: rem(20);
+        margin-top: rem(10);
         padding: rem(20) 0;
         font-family: $font-family-gothic;
         display: grid;
@@ -485,7 +485,9 @@ img {
         justify-content: space-between;
         align-items: center;
 
-        @include mq(tablet) {}
+        @include mq() {
+            margin-top: rem(20);
+        }
     }
 
     &__title {
@@ -839,6 +841,7 @@ img {
     }
 
     &--edit {
+        margin-top: rem(40);
         display: block;
         margin-right: auto;
         margin-left: auto;

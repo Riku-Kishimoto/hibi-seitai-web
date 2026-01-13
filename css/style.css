@@ -317,13 +317,18 @@ img {
   margin-right: auto;
 }
 .header__first {
-  margin-top: 1.25rem;
+  margin-top: 0.625rem;
   padding: 1.25rem 0;
   font-family: "Zen Maru Gothic", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
+}
+@media (width >= 1024px) {
+  .header__first {
+    margin-top: 1.25rem;
+  }
 }
 .header__title {
   color: #001F3F;
@@ -642,6 +647,7 @@ img {
   right: 0;
 }
 .btn--edit {
+  margin-top: 2.5rem;
   display: block;
   margin-right: auto;
   margin-left: auto;

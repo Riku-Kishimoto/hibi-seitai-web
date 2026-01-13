@@ -8,8 +8,8 @@
 
     <meta name="description" content="日比整体 だいせんじ接骨院の公式ホームページです。" />
 
-    <meta property="og:url" content="ページのURL" />
-    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:url" content="https://land-jj22.vivian.jp/hibiseitai/" />
+    <meta property="og:title" content="日比整体 だいせんじ接骨院" />
     <meta property="og:type" content="ページのタイプ">
     <meta property="og:description" content="記事の抜粋" />
     <meta property="og:image" content="画像のURL" />

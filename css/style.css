@@ -32,75 +32,6 @@ img {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
 }
 
-.loading {
-  position: fixed;
-  inset: 0;
-  background: #fff;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  z-index: 9999;
-  transform: translateY(0);
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.loading__list {
-  display: grid;
-  grid-auto-flow: row;
-  row-gap: 0.625rem;
-  text-align: center;
-}
-.loading__text {
-  margin-top: 12px;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  color: #001F3F;
-  opacity: 0.85;
-}
-
-.loading.is-hidden {
-  transform: translateY(-110%);
-}
-
-.wave path {
-  stroke: #001F3F;
-  stroke-dasharray: 240;
-  stroke-dashoffset: 240;
-  -webkit-animation: wave-draw 1.6s ease-in-out infinite;
-          animation: wave-draw 1.6s ease-in-out infinite;
-}
-
-@-webkit-keyframes wave-draw {
-  0% {
-    stroke-dashoffset: 240;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -240;
-  }
-}
-
-@keyframes wave-draw {
-  0% {
-    stroke-dashoffset: 240;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -240;
-  }
-}
-.loading {
-  display: none;
-}
-
-.loading.is-active {
-  display: grid;
-}
-
 .hamburger {
   position: fixed;
   top: 1.25rem;
@@ -906,6 +837,28 @@ img {
   opacity: 1;
 }
 
+.gnav__item.is-current > a {
+  color: #001F3F;
+  position: relative;
+  font-weight: bold;
+}
+
+.gnav__item.is-current > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.375rem;
+  transform: translateX(-50%);
+  width: 1.875rem;
+  height: 0.125rem;
+  background-color: #001F3F;
+  border-radius: 0.1875rem;
+}
+
+.gnav__item > a {
+  transition: color 0.3s, opacity 0.3s;
+}
+
 .mainvisual {
   position: relative;
   margin-top: 5.875rem;
@@ -1220,17 +1173,27 @@ img {
 }
 .clinic__tags li {
   width: 100%;
+  list-style: none;
+  padding: 0;
+  border: none;
+}
+.clinic__tags li a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0.5625rem 0.9375rem;
   border: 1px solid #001F3F;
   border-radius: 1.875rem;
-  padding: 0.5625rem 0.9375rem;
   font-size: 0.8125rem;
-  color: #001F3F;
   font-weight: bold;
+  color: #001F3F;
+  text-decoration: none;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 @media (width >= 480px) {
-  .clinic__tags li {
+  .clinic__tags li a {
     font-size: 1rem;
     padding: 0.5625rem 1.4375rem;
   }
@@ -1344,7 +1307,7 @@ img {
 }
 
 .card {
-  margin-bottom: 9.375rem;
+  padding-bottom: 6.25rem;
   display: grid;
   align-items: center;
 }
@@ -1625,11 +1588,12 @@ img {
 }
 @media (width >= 1024px) {
   .information {
-    margin-bottom: 12.5rem;
+    margin-bottom: 9.375rem;
   }
 }
 
 .access {
+  padding-top: 3.125rem;
   margin-bottom: 3.125rem;
 }
 .access__inner {
@@ -1729,6 +1693,7 @@ img {
 }
 
 .calendar {
+  padding-top: 3.125rem;
   margin-bottom: 3.125rem;
 }
 .calendar__inner {
@@ -1844,6 +1809,9 @@ img {
   }
 }
 
+.symptoms {
+  padding-top: 3.125rem;
+}
 .symptoms__inner {
   max-width: 880px;
   width: 87.69%;
@@ -1886,6 +1854,9 @@ img {
   }
 }
 
+.worthy {
+  padding-top: 3.125rem;
+}
 .worthy__inner {
   max-width: 880px;
   width: 87.69%;
@@ -1982,6 +1953,9 @@ img {
   }
 }
 
+.staff {
+  padding-top: 6.25rem;
+}
 .staff__inner {
   max-width: 880px;
   width: 87.69%;
@@ -2028,7 +2002,7 @@ img {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 12.5rem;
+  margin-bottom: 6.25rem;
   width: 90%;
   max-width: 18.75rem;
   color: #001F3F;

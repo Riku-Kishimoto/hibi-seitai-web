@@ -168,68 +168,7 @@ img {
         'opsz' 20
 }
 
-//ローディングアニメーション
-.loading {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    z-index: 9999;
 
-    transform: translateY(0);
-    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-
-    &__list {
-        display: grid;
-        grid-auto-flow: row;
-        row-gap: rem(10);
-        text-align: center;
-    }
-
-    &__text {
-        margin-top: 12px;
-        font-size: 14px;
-        letter-spacing: 0.08em;
-        color: $color-accent;
-        opacity: 0.85;
-    }
-}
-
-.loading.is-hidden {
-    transform: translateY(-110%);
-}
-
-.wave path {
-    stroke: $color-accent;
-    stroke-dasharray: 240;
-    stroke-dashoffset: 240;
-    animation: wave-draw 1.6s ease-in-out infinite;
-}
-
-@keyframes wave-draw {
-    0% {
-        stroke-dashoffset: 240;
-    }
-
-    50% {
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        stroke-dashoffset: -240;
-    }
-}
-
-.loading {
-    display: none;
-}
-
-.loading.is-active {
-    display: grid;
-}
 
 //ハンバーガーメニュー
 
@@ -1118,6 +1057,29 @@ img {
     }
 }
 
+.gnav__item.is-current>a {
+    color: $color-accent;
+    position: relative;
+    font-weight: bold;
+}
+
+.gnav__item.is-current>a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: rem(-6);
+    transform: translateX(-50%);
+    width: rem(30);
+    height: rem(2);
+    background-color: $color-accent;
+    border-radius: rem(3);
+}
+
+
+.gnav__item>a {
+    transition: color .3s, opacity .3s;
+}
+
 //メインビジュアル
 .mainvisual {
     position: relative;
@@ -1429,21 +1391,31 @@ img {
         grid-template-columns: 195fr 195fr;
         column-gap: rem(16);
 
-
         li {
             width: 100%;
-            border: 1px solid $color-accent;
-            border-radius: rem(30);
-            padding: rem(9) rem(15);
-            font-size: rem(13);
-            color: $color-accent;
-            font-weight: bold;
-            align-items: center;
-            justify-content: center;
+            list-style: none;
+            padding: 0;
+            border: none;
 
-            @include mq (mobile) {
-                font-size: rem(16);
-                padding: rem(9) rem(23);
+            a {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                padding: rem(9) rem(15);
+                border: 1px solid $color-accent;
+                border-radius: rem(30);
+                font-size: rem(13);
+                font-weight: bold;
+                color: $color-accent;
+                text-decoration: none;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                @include mq(mobile) {
+                    font-size: rem(16);
+                    padding: rem(9) rem(23);
+                }
             }
         }
     }
@@ -1561,7 +1533,7 @@ img {
 
 
 .card {
-    margin-bottom: rem(150);
+    padding-bottom: rem(100);
     display: grid;
     align-items: center;
 
@@ -1800,13 +1772,14 @@ img {
     }
 
     @include mq(desktop) {
-        margin-bottom: rem(200);
+        margin-bottom: rem(150);
     }
 }
 
 
 
 .access {
+    padding-top: rem(50);
     margin-bottom: rem(50);
 
     &__inner {
@@ -1874,6 +1847,7 @@ img {
 }
 
 .calendar {
+    padding-top: rem(50);
     margin-bottom: rem(50);
 
     &__inner {
@@ -1930,6 +1904,8 @@ img {
 }
 
 .symptoms {
+    padding-top: rem(50);
+
     &__inner {
         @include inner();
     }
@@ -1940,6 +1916,8 @@ img {
 }
 
 .worthy {
+    padding-top: rem(50);
+
     &__inner {
         @include inner();
     }
@@ -1974,6 +1952,8 @@ img {
 }
 
 .staff {
+    padding-top: rem(100);
+
     &__inner {
         @include inner();
     }
@@ -1987,7 +1967,7 @@ img {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: rem(200);
+    margin-bottom: rem(100);
     width: 90%;
     max-width: rem(300);
     color: $color-accent;

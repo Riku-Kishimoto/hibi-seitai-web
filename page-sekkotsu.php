@@ -37,7 +37,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotuinn_point1.webp" alt="" class="card__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotuinn_point1.webp" alt="女性治療師によるやさしい施術の様子" class="card__img">
                             <figcaption class="card__caption">
                                 初めての施術で不安を感じる方にも、安心して受けていただけるよう丁寧に対応いたします。
                                 女性治療師ならではのきめ細やかな気配りと共感のある施術で、心身の緊張をほぐしながら不調を整えます。
@@ -54,7 +54,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_point2.webp" alt="" class="card__img card__img--second">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_point2.webp" alt="交通事故治療の様子" class="card__img card__img--second">
                             <figcaption class="card__caption">
                                 むちうちや事故後の痛み・不調に専門的に対応。
                                 手技と電気治療を組み合わせ、筋肉・靭帯・関節へ的確にアプローチします。
@@ -73,7 +73,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_point3.webp" alt="" class="card__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_point3.webp" alt="自律神経バランス調整の様子" class="card__img">
                             <figcaption class="card__caption">
                                 ストレスや疲労による不調に。
                                 手技と電気刺激で筋肉の緊張をゆるめ、血流とリンパの流れを整えます。
@@ -140,7 +140,7 @@
 
                 <div class="worthy__grid">
                     <div class="worthy__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_cure.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_cure.webp" alt="交通事故治療の様子">
                     </div>
 
                     <div class="worthy__items table">
@@ -161,15 +161,13 @@
                 </div>
 
             </div>
-            <div class="nextbtn">
-                <a href="<?php echo home_url('/sekkotsu-menu/#fee'); ?>">
+                <a href="<?php echo home_url('/sekkotsu-menu/#fee'); ?>" class="nextbtn">
                     <div class="nextbtn__inner">
                         <div class="nextbtn__content">
                             <p>料金表ページへ<span class="dli-arrow-right"></span></p>
                         </div>
                     </div>
                 </a>
-            </div>
         </section>
 
         <section class="staff" id="staff">
@@ -206,15 +204,13 @@
             </div>
 
             </div>
-            <div class="nextbtn">
-                <a href="<?php echo home_url('/sekkotsu-menu/#flow'); ?>">
+                <a href="<?php echo home_url('/sekkotsu-menu/#flow'); ?>" class="nextbtn">
                     <div class="nextbtn__inner">
                         <div class="nextbtn__content">
                             <p>施術の流れ<span class="dli-arrow-right"></span></p>
                         </div>
                     </div>
                 </a>
-            </div>
         </section>
     </main>
 

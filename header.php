@@ -103,23 +103,57 @@
             <div class="navigation__inner">
                 <div class="navigation__item">
                     <ul class="gnav__list navigation__content">
-                        <li class="gnav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
-                        <li class="gnav__item"><a href="<?php echo home_url('/seitai/'); ?>">日比整体</a></li>
-                        <li class="gnav__item"><a href="<?php echo home_url('/sekkotsu/'); ?>">だいせんじ接骨院</a></li>
-                        <li class="gnav__item dropdown dropdowntext"><a href="#"><span class="nav-default">メニュー・料金</span>
-                            <span class="nav-hover">下記から選択</span></a>
-                            <ul class="dropdown__menu dropdown__menu--big dropdown__menu--navigation">
-                                <li class="gnav__item--nonhov"><a href="<?php echo home_url('/seitai-menu/'); ?>">整体&nbsp;メニュー・料金</a></li>
-                                <li class="gnav__item--nonhov"><a href="<?php echo home_url('/sekkotsu-menu/'); ?>">接骨院&nbsp;メニュー・料金</a></li>
-                            </ul>
+
+                        <li class="gnav__item <?php if (is_front_page()) echo 'is-current'; ?>">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a>
                         </li>
-                        <li class="gnav__item"><a href="<?php echo home_url('/sekkotsu/#worthy'); ?>">交通事故治療</a></li>
-                        <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #access">アクセス</a></li>
-                        <li class="gnav__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?> #calendar">営業案内</a></li>
-                        <li class="gnav__item gnav__item--nonhov gnav__item--btn"><a class="btn" href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+
+                        <li class="gnav__item <?php if (is_page('seitai')) echo 'is-current'; ?>">
+                            <a href="<?php echo home_url('/seitai/'); ?>">日比整体</a>
+                        </li>
+
+                        <li class="gnav__item <?php if (is_page('sekkotsu')) echo 'is-current'; ?>">
+                            <a href="<?php echo home_url('/sekkotsu/'); ?>">だいせんじ接骨院</a>
+                        </li>
+
+                        <li class="gnav__item dropdown dropdowntext
+                            <?php if (is_page(['seitai-menu', 'sekkotsu-menu'])) echo 'is-current'; ?>">
+                            <a href="">
+                                <span class="nav-default">メニュー・料金</span>
+                                <span class="nav-hover">下記から選択</span>
+                            </a>
+
+                        <ul class="dropdown__menu dropdown__menu--big dropdown__menu--navigation">
+                            <li class="gnav__item--nonhov">
+                                <a href="<?php echo home_url('/seitai-menu/'); ?>">整体&nbsp;メニュー・料金</a>
+                            </li>
+                            <li class="gnav__item--nonhov">
+                                <a href="<?php echo home_url('/sekkotsu-menu/'); ?>">接骨院&nbsp;メニュー・料金</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                <li class="gnav__item <?php if (is_page('sekkotsu')) echo 'is-current-sub'; ?>">
+                    <a href="<?php echo home_url('/sekkotsu/#worthy'); ?>">交通事故治療</a>
+                </li>
+
+                <li class="gnav__item <?php if (is_front_page()) echo 'is-current-sub'; ?>">
+                    <a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>#access">アクセス</a>
+                </li>
+
+                <li class="gnav__item <?php if (is_front_page()) echo 'is-current-sub'; ?>">
+                    <a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>#calendar">営業案内</a>
+                </li>
+
+                    <li class="gnav__item gnav__item--nonhov gnav__item--btn">
+                        <a class="btn"
+                        href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
                         target="_blank"
-                        rel="noopener">LINEで予約</a>
-                        </li>
+                        rel="noopener">
+                            LINEで予約
+                        </a>
+                    </li>
+
                     </ul>
                 </div>
             </div>

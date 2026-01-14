@@ -40,7 +40,7 @@
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
                             <div class="card__figure__media">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sokuatu.webp" alt="" class="card__img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sokuatu.webp" alt="足圧での施術風景" class="card__img">
                             </div>
                             <figcaption class="card__caption">
                                 当院では、熟練の施術者が足裏を使って深部のコリをほぐす
@@ -58,7 +58,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/ordermade.webp" alt="" class="card__img card__img--second">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/ordermade.webp" alt="オーダーメイド施術イメージ" class="card__img card__img--second">
                             <figcaption class="card__caption">
                                 当院では、「ボキボキが苦手」「強い刺激が不安」という方も安心。
                                 体の状態に合わせて、やさしい整体からしっかり圧の施術まで柔軟に対応します。
@@ -76,7 +76,7 @@
 
                     <div class="card__side card__side--media">
                         <figure class="card__figure">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/zennshin.webp" alt="" class="card__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/zennshin.webp" alt="全身矯正イメージ" class="card__img">
                             <figcaption class="card__caption">
                                 痛みのケアだけでなく、体全体のバランスを整えるのが当院の全身矯正です。
                                 骨盤を中心に整えることで、肩や腰への負担を軽くし、不調の出にくい体づくりをサポートします。
@@ -185,15 +185,13 @@
 
             </div>
 
-            <div class="nextbtn">
-                <a href="<?php echo home_url('/seitai-menu/#fee'); ?>">
+                <a href="<?php echo home_url('/seitai-menu/#fee'); ?>" class="nextbtn">
                     <div class="nextbtn__inner">
                         <div class="nextbtn__content">
                             <p>料金表ページへ<span class="dli-arrow-right"></span></p>
                         </div>
                     </div>
                 </a>
-            </div>
         </section>
 
         <section class="staff" id="staff">
@@ -255,15 +253,13 @@
             </div>
 
             </div>
-            <div class="nextbtn">
-                <a href="<?php echo home_url('/seitai-menu/#flow'); ?>">
+                <a href="<?php echo home_url('/seitai-menu/#flow'); ?>" class="nextbtn">
                     <div class="nextbtn__inner">
                         <div class="nextbtn__content">
                             <p>施術の流れ<span class="dli-arrow-right"></span></p>
                         </div>
                     </div>
                 </a>
-            </div>
         </section>
 
 </main>

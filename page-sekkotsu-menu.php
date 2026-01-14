@@ -19,7 +19,7 @@
                 <h3 class="menu__title"><span>メニュー</span></h3>
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_menu1.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_menu1.webp" alt="肩の治療の様子">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">肩の治療</h4>
@@ -32,7 +32,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow2.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow2.webp" alt="腰の治療の様子">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">腰の治療</h4>
@@ -45,7 +45,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_menu2.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_menu2.webp" alt="首まわりの治療の様子">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">首まわりの治療</h4>
@@ -58,7 +58,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_point2.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_point2.webp" alt="交通事故治療の様子">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">交通事故治療</h4>
@@ -71,7 +71,7 @@
 
                 <div class="menu__grid">
                     <div class="menu__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_menu3.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_menu3.webp" alt="自律神経調整施術の様子">
                     </div>
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">自律神経調整施術</h4>
@@ -156,7 +156,7 @@
                             <p class="flow__step">STEP.01</p>
                             <h4 class="flow__heading">受付・問診表に症状を記入</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow1.webp" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/seitai_flow1.webp" alt="受付のイメージ">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -173,7 +173,7 @@
                             <p class="flow__step">STEP.02</p>
                             <h4 class="flow__heading">問診</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow3.webp" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow3.webp" alt="問診の様子">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -190,7 +190,7 @@
                             <p class="flow__step">STEP.03</p>
                             <h4 class="flow__heading">お身体の検査</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow1.webp" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow1.webp" alt="お身体の検査の様子">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -206,7 +206,7 @@
                             <p class="flow__step">STEP.04</p>
                             <h4 class="flow__heading">施術</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow2.webp" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow2.webp" alt="施術の様子">
                             </div>
                             <div class="flow__text">
                                 <p>
@@ -221,7 +221,7 @@
                             <p class="flow__step">STEP.05</p>
                             <h4 class="flow__heading">施術後の説明</h4>
                             <div class="flow__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow4.webp" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotu_flow4.webp" alt="施術後の説明の様子">
                             </div>
                             <div class="flow__text">
                                 <p>

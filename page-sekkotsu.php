@@ -180,7 +180,7 @@
                     <div class="person__info">
 
                         <div class="person__info__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/akiko_photo.webp" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/akiko_photo.webp" alt="日比亜希子さんの写真">
                         </div>
 
                         <div class="person__info__role">院長</div>

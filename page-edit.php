@@ -114,12 +114,7 @@ get_header("edit");
     }
     ?>
 
-    <div class="admin-actions">
-        <a href="<?php echo admin_url('post-new.php?post_type=item'); ?>"
-            class="btn-add">
-            ＋ 新しい料金表を追加
-        </a>
-    </div>
+
 
 </section>
 

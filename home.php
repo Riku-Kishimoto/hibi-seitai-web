@@ -57,8 +57,6 @@
                 // ページネーションの出力
                 $pagination_html = get_the_posts_pagination( $args );
 
-                // 出力されたHTMLを編集してクラスを適用
-                // WordPress標準のページネーションのクラス名を、ご提示のクラス名に置換します
                 $pagination_html = str_replace(
                     array(
                         'page-numbers',
@@ -77,7 +75,6 @@
                     $pagination_html
                 );
 
-                // 現在のページを示す `current` クラスを `active` クラスに置換（CSSに合わせて）
                 $pagination_html = str_replace(
                     'current',
                     'active',

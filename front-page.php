@@ -61,17 +61,7 @@
                             <li><a href="<?php echo home_url('/seitai/#symptoms'); ?>">肩こり・腰痛対応</a></li>
                             <li><a href="<?php echo home_url('/seitai/#worthy'); ?>">酸素カプセル</a></li>
                         </ul>
-                        <!-- <div>
-                            <h4 class="table__title">こんな方におすすめ</h4>
-                        <div class="table__list">
-                            <ol class="table__list__item">
-                                <li>疲れが取れにくい</li>
-                                <li>肩こり・頭痛がつらい</li>
-                                <li>集中力を高めたい</li>
-                                <li>ケガの回復を早めたい</li>
-                            </ol>
-                        </div>
-                        </div> -->
+
                         <a href="<?php echo home_url('/seitai/'); ?>" class="btn btn--clinic">日比整体個別ページへ<span class="dli-arrow-right"></span></a>
                     </div>
                 </article>
@@ -79,7 +69,7 @@
                 <article class="clinic">
                     <div class="clinic__top">
                         <div class="clinic__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotuinn_visual.webp" alt="日比整体">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/sekkotuinn_visual.webp" alt="だいせんじ接骨院">
                         </div>
                         <div class="clinic__content explanation">
                             <h3 class="clinic__title explanation__title">だいせんじ接骨院</h3>
@@ -137,11 +127,9 @@
                 </ul>
                 <?php
                 else :
-                    // 投稿がない場合の表示
                     echo '<p>現在、お知らせはありません。</p>';
                 endif;
 
-                // クエリのリセット（重要）
                 wp_reset_postdata();
                 ?>
                 <a class="information__link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">お知らせ一覧ページへ</a>

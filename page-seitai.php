@@ -204,7 +204,7 @@
                     <div class="person__info">
 
                         <div class="person__info__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/hibitakeru.webp" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/hibitakeru.webp" alt="日比尊さんの写真">
                         </div>
 
                         <div class="person__info__role">院長</div>
@@ -231,7 +231,7 @@
                     <div class="person__info">
 
                         <div class="person__info__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/keitaniguchi.webp" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/keitaniguchi.webp" alt="谷口慶さんの写真">
                         </div>
 
                         <div class="person__info__name">

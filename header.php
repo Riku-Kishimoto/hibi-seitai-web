@@ -8,20 +8,20 @@
 
     <meta name="description" content="日比整体 だいせんじ接骨院の公式ホームページです。" />
 
-    <meta property="og:url" content="https://land-jj22.vivian.jp/hibiseitai/" />
+    <meta property="og:url" content="<?php echo esc_url( get_theme_file_uri('/images/ogp.png') ); ?>" />
     <meta property="og:title" content="日比整体 だいせんじ接骨院｜春日井市の整体・接骨院" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="春日井市で40年以上続く、整体と接骨院を併設した施術院です。" />
-    <meta property="og:image" content="https://land-jj22.vivian.jp/hibiseitai/assets/images/ogp.png" />
+    <meta property="og:image" content="<?php echo esc_url( get_theme_file_uri('/images/ogp.png') ); ?>" />
 
     <meta property="og:site_name" content="日比整体 だいせんじ接骨院" />
     <meta property="og:locale" content="ja_JP" />
 
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="apple-touch-icon-precomposed" href="https://land-jj22.vivian.jp/hibiseitai/assets/images/ogp.png" />
+    <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( get_theme_file_uri('/images/ogp.png') ); ?>" />
 
-    <meta name="msapplication-TileImage" content="https://land-jj22.vivian.jp/hibiseitai/assets/images/ogp.png" />
+    <meta name="msapplication-TileImage" content="<?php echo esc_url( get_theme_file_uri('/images/ogp.png') ); ?>" />
     <meta name="msapplication-TileColor" content="#F2C94C" />
 
 <?php wp_head(); ?>

@@ -35,11 +35,11 @@
                     <?php
                 // ページネーションの関数
                 $args = array(
-                    'mid_size'  => 2, // 現在のページの両側に表示するページ数
+                    'mid_size'  => 2,
                     'prev_text' => '前へ',
                     'next_text' => '次へ',
                     'screen_reader_text' => 'ページナビゲーション',
-                    'type'      => 'list', // ul/liタグで出力
+                    'type'      => 'list',
                 );
 
                 // ページネーションをカスタムクラスでラップ
@@ -49,7 +49,6 @@
                 $pagination_html = get_the_posts_pagination( $args );
 
                 // 出力されたHTMLを編集してクラスを適用
-                // WordPress標準のページネーションのクラス名を、ご提示のクラス名に置換します
                 $pagination_html = str_replace(
                     array(
                         'page-numbers',

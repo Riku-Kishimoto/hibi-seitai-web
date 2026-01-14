@@ -93,12 +93,10 @@ img {
     stroke-dashoffset: -240;
   }
 }
-/* 最初は非表示にしておく（JSで制御するため） */
 .loading {
   display: none;
 }
 
-/* 初回訪問時、JSでこのクラスを付けて表示させる */
 .loading.is-active {
   display: grid;
 }
@@ -1254,10 +1252,14 @@ img {
   position: relative;
   width: 21.875rem;
   height: 21.875rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 @media (width >= 1024px) {
   .person__info {
     order: 2;
+    margin-right: auto;
+    margin-left: 0;
   }
 }
 .person__info__image {
@@ -1331,6 +1333,14 @@ img {
 }
 .person__tag {
   padding: 0.9375rem 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (width >= 1024px) {
+  .person__tag {
+    margin-right: auto;
+    margin-left: 0;
+  }
 }
 
 .card {
@@ -1340,6 +1350,8 @@ img {
 }
 @media (width >= 1024px) {
   .card {
+    display: grid;
+    align-items: center;
     grid-template-columns: 284fr 500fr;
     justify-content: space-between;
     -moz-column-gap: 6rem;
@@ -1376,8 +1388,8 @@ img {
   display: block;
   margin-left: auto;
   max-width: 18.75rem;
-  border-top-left-radius: 1.25rem;
-  border-bottom-left-radius: 1.25rem;
+  border-radius: 1.25rem;
+  border-radius: 1.25rem;
 }
 @media (width >= 1024px) {
   .card__img {
@@ -1389,10 +1401,8 @@ img {
 .card__img--second {
   margin-right: auto;
   margin-left: 0;
-  border-top-left-radius: 0rem;
-  border-bottom-left-radius: 0rem;
-  border-top-right-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
+  border-radius: 1.25rem;
+  border-radius: 1.25rem;
 }
 @media (width >= 1024px) {
   .card__img--second {
@@ -1412,16 +1422,9 @@ img {
   }
 }
 .card__side--media {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-@media (width >= 1024px) {
-  .card__side--media {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card__side--second {
   display: block;

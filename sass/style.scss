@@ -328,6 +328,32 @@ img {
     }
 }
 
+.nav-overlay__item>.nav-overlay__link {
+    position: relative;
+    transition: color .3s, opacity .3s;
+}
+
+.nav-overlay__item.is-current>.nav-overlay__link {
+    color: $color-accent;
+    font-weight: bold;
+}
+
+.nav-overlay__item.is-current>.nav-overlay__link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: rem(6);
+    transform: translateX(-50%);
+    width: rem(30);
+    height: rem(2);
+    background-color: $color-accent;
+    border-radius: rem(3);
+}
+
+.nav-overlay__item.is-current-sub>.nav-overlay__link {
+    opacity: .7;
+}
+
 .hamburger__btns {
     display: grid;
     grid-auto-flow: row;

@@ -169,6 +169,81 @@
     </div>
 
     <nav id="overlay-menu" class="nav-overlay" aria-hidden="true">
+    <div class="nav-overlay__content">
+        <ul class="nav-overlay__list">
+
+            <li class="nav-overlay__item <?php if (is_front_page()) echo 'is-current'; ?>">
+                <a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>" class="nav-overlay__link">
+                    ホーム
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_page('seitai')) echo 'is-current'; ?>">
+                <a href="<?php echo home_url('/seitai/'); ?>" class="nav-overlay__link">
+                    日比整体
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_page('sekkotsu')) echo 'is-current'; ?>">
+                <a href="<?php echo home_url('/sekkotsu/'); ?>" class="nav-overlay__link">
+                    だいせんじ接骨院
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_page('seitai-menu')) echo 'is-current'; ?>">
+                <a href="<?php echo home_url('/seitai-menu/'); ?>" class="nav-overlay__link">
+                    整体&nbsp;メニュー・料金
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_page('sekkotsu-menu')) echo 'is-current'; ?>">
+                <a href="<?php echo home_url('/sekkotsu-menu/'); ?>" class="nav-overlay__link">
+                    接骨院&nbsp;メニュー・料金
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_page('sekkotsu')) echo 'is-current-sub'; ?>">
+                <a href="<?php echo home_url('/sekkotsu/#worthy'); ?>" class="nav-overlay__link">
+                    交通事故治療
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_front_page()) echo 'is-current-sub'; ?>">
+                <a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>#access" class="nav-overlay__link">
+                    アクセス
+                </a>
+            </li>
+
+            <li class="nav-overlay__item <?php if (is_front_page()) echo 'is-current-sub'; ?>">
+                <a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>#calendar" class="nav-overlay__link">
+                    営業案内
+                </a>
+            </li>
+
+            <li class="nav-overlay__item nav-overlay__rese">
+                <a class="rese__line"
+                   href="<?php echo esc_url('https://lin.ee/cDKVgr8'); ?>"
+                   target="_blank"
+                   rel="noopener">
+                    LINEで予約
+                </a>
+
+                <a class="rese__tel" href="tel:0568843383">
+                    <span class="material-symbols-outlined">call</span>
+                    <?php
+                        $custom_field_value = SCF::get_option_meta( 'theme-options', 'about-tel' );
+                        if ( $custom_field_value ) {
+                            echo esc_html( $custom_field_value );
+                        }
+                    ?>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+    <!-- <nav id="overlay-menu" class="nav-overlay" aria-hidden="true">
         <div class="nav-overlay__content">
             <ul class="nav-overlay__list">
                 <li class="nav-overlay__item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_on_front' ) ) ); ?>" class="nav-overlay__link">ホーム</a>
@@ -204,4 +279,4 @@
                 </div>
             </ul>
         </div>
-    </nav>
+    </nav> -->

@@ -176,6 +176,32 @@ img {
   }
 }
 
+.nav-overlay__item > .nav-overlay__link {
+  position: relative;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.nav-overlay__item.is-current > .nav-overlay__link {
+  color: #001F3F;
+  font-weight: bold;
+}
+
+.nav-overlay__item.is-current > .nav-overlay__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.375rem;
+  transform: translateX(-50%);
+  width: 1.875rem;
+  height: 0.125rem;
+  background-color: #001F3F;
+  border-radius: 0.1875rem;
+}
+
+.nav-overlay__item.is-current-sub > .nav-overlay__link {
+  opacity: 0.7;
+}
+
 .hamburger__btns {
   display: grid;
   grid-auto-flow: row;

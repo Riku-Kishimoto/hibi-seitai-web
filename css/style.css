@@ -709,6 +709,25 @@ img {
   font-size: 0.75rem;
   text-align: center;
 }
+.footer a {
+  position: relative;
+  text-decoration: none;
+  padding: 2px 0;
+  display: inline-block;
+}
+.footer a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #001F3F;
+  transition: width 300ms ease-out;
+}
+.footer a:hover::before {
+  width: 100%;
+}
 
 .explanation {
   margin-bottom: 3.125rem;

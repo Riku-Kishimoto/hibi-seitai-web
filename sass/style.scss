@@ -907,6 +907,29 @@ img {
         font-size: rem(12);
         text-align: center;
     }
+
+
+    a {
+        position: relative;
+        text-decoration: none;
+        padding: 2px 0;
+        display: inline-block;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: $color-accent;
+            transition: width 300ms ease-out;
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+    }
 }
 
 .explanation {

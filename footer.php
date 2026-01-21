@@ -18,7 +18,7 @@
                             <li><a href="<?php echo home_url('/seitai/#worthy'); ?>">酸素カプセル</a></li>
                         </ul>
                     </div>
-                    <div class="footer__contet">
+                    <div class="footer__content">
                         <h3 class="footer__content__title"><a href="<?php echo home_url('/sekkotsu/'); ?>">だいせんじ接骨院</a></h3>
                         <ul class="footer__content__list">
                             <li><a href="<?php echo home_url('/sekkotsu/#symptoms'); ?>">施術内容</a></li>

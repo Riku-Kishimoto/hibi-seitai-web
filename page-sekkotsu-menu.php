@@ -37,8 +37,8 @@
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">腰の治療</h4>
                         <div class="explanation__content explanation__content--normal">
-                            <p>肩甲骨の動きが悪く、背中のつっぱりや違和感を感じる方におすすめです。
-                                肩甲骨まわりの筋肉を丁寧にほぐし、可動域を広げることで姿勢改善や肩こり解消にもつながります。</p>
+                            <p>ぎっくり腰と言われる急性腰痛、姿勢の崩れ、長時間の座り仕事、立ち仕事による腰痛は筋肉や筋膜が原因によるもの（筋・筋膜性疼痛）も多いです。
+身体全体のバランスを見ながら施術していきます。</p>
                         </div>
                     </div>
                 </div>
@@ -50,8 +50,7 @@
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">首まわりの治療</h4>
                         <div class="explanation__content explanation__content--normal">
-                            <p>膝の痛み、足の疲労やむくみ、しびれなどの不調に対応します。
-                                血流やリンパの流れを促進し、足を軽く整えることで「足を細くしたい」という美容面のご希望にも効果的です。</p>
+                            <p>寝違え、ストレートネックや猫背が原因の首の痛みに対し筋肉をほぐして筋緊張の改善、超音波治療器を使用し血流や炎症をコントロールし症状を改善します。</p>
                         </div>
                     </div>
                 </div>
@@ -63,8 +62,8 @@
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">交通事故治療</h4>
                         <div class="explanation__content explanation__content--normal">
-                            <p>足首のねんざや、かかと・足裏の痛み、正座ができないといった症状に対して矯正を行います。
-                                足関節のズレを整えることで、歩行時のバランスや姿勢の安定性を取り戻します。</p>
+                            <p>事故の衝撃で痛めてしまった筋肉、靭帯、関節包に対して手技や最新の医療器で早期回復、症状を取り除く施術をします。
+後遺症を残さないために事故後すぐ治療を行うことが重要です。</p>
                         </div>
                     </div>
                 </div>
@@ -76,8 +75,7 @@
                     <div class="menu__items explanation">
                         <h4 class="explanation__title explanation__title--short">自律神経調整施術</h4>
                         <div class="explanation__content explanation__content--normal">
-                            <p>足首のねんざや、かかと・足裏の痛み、正座ができないといった症状に対して矯正を行います。
-                                足関節のズレを整えることで、歩行時のバランスや姿勢の安定性を取り戻します。</p>
+                            <p>自律神経に有効な電流を流しながら首の筋肉のバランスと腸の動きを整え自律神経調節を行います。身体全体の緊張が和らぎ副交感神経優位になります。</p>
                         </div>
                     </div>
                 </div>
